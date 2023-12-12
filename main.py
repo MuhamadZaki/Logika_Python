@@ -1,10 +1,15 @@
 import math
 
+# Mendefinisikan fungsi 'recurse' dengan dua parameter, 'n' dan 's'
 def recurse (n,s):
+    # Kondisional, jika 'n' sama dengan 0
     if n == 0:
+        # Mencetak nilai 's' saat ini
         print(s)
     else:
+        # Jika nilai 'n' tidak sama dengan 0, panggil diri sendiri dengan nilai 'n' dikurangi 1 dan 's' ditambah 'n'
         recurse(n-1, n+s)
+# Penggunaan fungsi
 recurse(3,0)
 
 #Apa Outputnya?
@@ -537,14 +542,21 @@ print(find("Zaki", "Zaki"))
 # C. None
 # D. -1
 
+# Mendfinisikan fungsi 'find' untuk mencari indeks pertama kemunculan suatu karakter dalam sebuah kata
 def find(word, letter, s_index=0):
+    # Inisialisasi variable 'index' dengan nilai awal s_index
     index = s_index
+    # Loop 'while' untuk iterasi melalui karakter dalam kata 'word'
     while index < len(word):
+        # Kondisional, jika karakter saat ini sama dengan karakter yang dicari 'letter'
         if word[index] == letter:
+            # Mengembalikan indeks pertama kemunculan karakter yang dicari
             return index
+        # Peningkatan nilai 'index' untuk melanjutkan pencarian
         index += 1
+    # mengembalikan - 1 jika karakter tidak ditemukan dalam kata 'word'
     return - 1
-
+# Penggunaan fungsi
 print(find("Tangan Zaki", "k", 2))
 
 #Apa Outputnya?
@@ -554,11 +566,17 @@ print(find("Tangan Zaki", "k", 2))
 # C. 9
 # D. -1
 
+# Mendefinisikan fungsi 'fruit' untuk menghitung jumlah kemunculan karakter 'a' dalam seuah kata
 def fruit(word, count= 0):
+    # Loop untuk iterasi melalui setiap karakter dalam kata 'word'
     for letter in word:
+        # Kondisional, jika karakter saat ini sama dengan karakter 'a'
         if letter == "a":
+            # Tambahkan 1 ke jumlah kemunculan karakter 'a'
             count = count + 1
-            print(count)    
+            # Cetak jumlah kemunculan karakter 'a' saat ini
+            print(count)
+# Penggunaan fungsi    
 fruit("Banana", 0)
 
 #Apa Outputnya?
@@ -568,14 +586,25 @@ fruit("Banana", 0)
 # C. 2
 # D. 3
 
+# Mendefinisikan fungsi 'couse' untuk menghitung jumlah kemunculan suatu karakter dalam sebuah kata
 def cous(word, karakter):
+    # Inisialisasi variable hitung untuk menyimpan jumlah kemunculan karakter
     hitung = 0
+    # Loop untuk iterasi melalui setiap karakter dalam kata 'word'
     for char in word:
+        # Kondisional, jika karakter saat ini sama dengan karakter yang dicari
         if char == karakter:
+            # Jika karakter ditemukan, tambah jumlah kemunculan
             hitung +=1
-            return hitung
+            # Kembalikan jumlah kemunculan saat ini
+    if hitung > 0:
+        # Mengembalikan jumlah kemunculan karakter jika lebih dari 0
+        return hitung
+    else:
+        # Mengembalikan - 1 jika karakter tidak ditemukan sama sekali
         return -1
-cous("Mendesah",'e')
+# Penggunaan fungsi   
+print('Hasil = ', cous("Mendesah",'e'))
 
 #Apa Outputnya?
 
