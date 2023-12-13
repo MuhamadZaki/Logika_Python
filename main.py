@@ -1,3 +1,4 @@
+# Modul math digunakan untuk operasi matematika, seperti sqrt(akar kuadrat) dan pi
 import math
 
 # Mendefinisikan fungsi 'recurse' dengan dua parameter, 'n' dan 's'
@@ -144,11 +145,17 @@ distance(1,2,4,6)
 # D. 2
 
 def distance(x1,y1,x2,y2):
+    # Menghitung jaarak horizontal (dx) antara dua titik
     dx = x2 - x1
+    # Menghitung jarak vertikal (dy) antara dua titik
     dy = y2 - y1
+    # Menghitung jarak kuadrat (squared) menggunakan teorema pythagoras
     squared = dx**2 + dy**2
+    # Menghitung jarak Euclidean dengan mengambil akar kuadrat dari jarak kuadrat
     result = math.sqrt(squared)
+    # Menampilkan hasil
     return print("Hasil: ", result)
+# Penggunaan fungsi
 distance(1,2,4,6)
 
 #Apa Outputnya?
@@ -158,16 +165,23 @@ distance(1,2,4,6)
 # C. 5.0
 # D. 2
 
+# Fungsi untuk menghitung jarak antara dua titik (x1,y1) dan (x2,y2)
 def distance(x1,y1,x2,y2):
+    # Menggunakan rumus jarak Euclidean (pythagoras), untuk menghitung jarak
     return math.sqrt((x2-x1)**2 + (y2-y1)**2)
-
+# Fungsi untuk mengitung luas lingkaran berdasarkan jari-jari
 def area(radius):
+    # Menggunakan rumus luas lingkaran pi * r^2
     return math.pi * radius**2
-
+# Fungsi untuk menghitung luas lingkaran berdasarkan dua titik pusat (xc, yc) dan (xp, yp)
 def circel_area(xc,yc,xp,yp):
+    # Menggunakan fungsi distance untuk menghitung jari-jari lingkaran
     radius = distance(xc,yc,xp,yp)
+    # Menggunakan fungsi area untuk menghitung luas lingkaran berdasarkan jari-jari
     result = area(radius)
+    # Menampilkan hasil luas lingkaran
     return print("Hasil: ",result)
+# Penggunaan fungsi
 circel_area(1,2,3,4)
 
 #Apa Outputnya?
@@ -177,8 +191,11 @@ circel_area(1,2,3,4)
 # C. 25.132741228718352
 # D. 2
 
+# Fungsi is_between dengan tiga parameter
 def is_between(x,y,z):
+    # Mengembalikan True jika x kurang dari atau sama dengan y dan y kurang dari atau sama dengan z
     return x<=y<=z
+# Penggunaan fungsi
 print(is_between(1,1,1))
 
 #Apa Outputnya?
@@ -188,13 +205,19 @@ print(is_between(1,1,1))
 # C. False
 # D. 3
 
+# Fungsi rekrusif untuk menghitung faktorial dari suatu angka n
 def factorial(n):
+    # Basis dari rekurasi, jika n sama dengan 0, kembalikan 1 (0! = 1)
     if n == 0:
         return 1
     else:
+        # Rekursi, panggil fungsi factorial dengan parameter (n-1)
         recurse = factorial(n-1)
+        # Hitung hasil factorial dengan mengalikan n dengan hasil rekursi
         result = n * recurse
+        # kembalikan hasil factorial
         return result
+# Penggunaan fungsi
 print("Hasil: ",factorial(3))
 
 #Apa Outputnya?
@@ -204,13 +227,18 @@ print("Hasil: ",factorial(3))
 # C. 2
 # D. 3
 
+# Fungsi rekursif untuk menghitung bilangan fibonancci ke-n
 def fibonacci(n):
+    # Basis rekursi, jika n sama dengan 0, kembalikan 0
     if n == 0:
         return 0
+    # Basis rekursi, jika n sama dengan 1, kembalikan 1
     elif n == 1:
         return 1
     else:
+        # Rekursi, jumlahkan dua panggilan rekursif sebelumnya untuk n-1 dan n-2
         return fibonacci(n-1) + fibonacci(n-2)
+# Penggunaan fungsi
 print(fibonacci(6))
 
 #Apa Outputnya?
@@ -220,8 +248,11 @@ print(fibonacci(6))
 # C. 2
 # D. 8
 
+# Fungsi yang mengembalikan karakter pertama dari suatu string
 def first(word):
+    # Menggunakan indeks 0 untuk mengakses karakter pertama dari string
     return word[0]
+# Penggunaan fungsi
 print(first("Muhamad Zaki"))
 
 #Apa Outputnya?
@@ -231,8 +262,11 @@ print(first("Muhamad Zaki"))
 # C. u
 # D. i
 
+# Fungsi yang mengembalikan karakter terakhir dari suatu string
 def last(word):
+    # Menggunakan indeks -1 untuk mengakses karakter terakhir dari string
     return word[-1]
+# Penggunaan fungsi
 print(last("Muhamad Zaki"))
 
 #Apa Outputnya?
@@ -242,8 +276,11 @@ print(last("Muhamad Zaki"))
 # C. u
 # D. i
 
+# Fungsi yang mengembalikan bagian tengah dari suatu string
 def middle(word):
+    # Menggunakan slicing dengan indeks 1 hingga -1 untuk mendapatkan bagian tengah dari string
     return word[1:-1]
+# Penggunaan fungsi
 print(middle("Muhamad Zaki"))
 
 #Apa Outputnya?
@@ -253,8 +290,11 @@ print(middle("Muhamad Zaki"))
 # C. dZ
 # D. uhamad Zak
 
+# Fungsi untuk mengecek apakah string merupakan palindrome atau bukan
 def palindrome(middle):
+    # Menggunakan slicing dengan indeks 1 hingga -1 untuk mendapatkan bagian tengah dari string
     return middle [1:-1]
+# Penggunaan fungsi
 print(palindrome("ab"))
 
 #Apa Outputnya?
@@ -882,7 +922,7 @@ print(result)
 # C. Error
 # D. A & B benar!
 
-def membaca(file_name, encoding='utf-8'):
+def reads(file_name, encoding='utf-8'):
     try:
         # Membuka file dengan menentukan encoding
         with open(file_name, encoding=encoding) as find:
@@ -894,18 +934,18 @@ def membaca(file_name, encoding='utf-8'):
             return word
         
     except FileNotFoundError:
-        # Menanangani kasus jika file tidak ditemukan
+        # Menangani kasus jika file tidak ditemukan
         return f'File {file_name} tidak ditemukan!'
     
     except UnicodeEncodeError:
-        # Menangani kesalahan encoding, jika encoding salah
+        # Menangani kesalahan encoding jika encoding salah
         return f'Gagal mendecode {file_name},karena menggunakan encoding yang salah!'
     
     except Exception as z:
-        # Menangani kesalahan umum lainnya
+        # Meneangani kesalahan umum lainnya
         return f'Terjadi kesalahan! {z}'
-# Penggunaan fungsi    
-print(membaca(file_name = 'zaki.txt'))
+# Penggunaan fungsi
+print(reads(file_name = 'dosa.txt'))
 
 #Apa Outputnya?
 
