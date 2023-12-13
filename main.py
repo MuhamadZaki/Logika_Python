@@ -19,11 +19,21 @@ recurse(3,0)
 # C. 3
 # D. 2
 
+# Fungsi segitiga dengan tiga parameter a,b dan c
 def segitiga(a,b,c):
+    # Memeriksa aturan sisi segitiga
+    # A. Panjang sisi a + b harus lebih besar dari panjang sisi c
+    # B. Panjang sisi b + a harus lebih besar dari panjang sisi c
+    # C. Panjang sisi b + c harus lebih besar dari panjang sisi a
+    # Jika terpenuhi segitiga terbentuk
     if a + b > c and b + a > c and b + c > a:
+        # Cetak True 
         print(True)
+    # Jika aturan sisi segitigatidak terpenuhi, segitiga tidak dapat dibentuk
     else:
+        # Cetak False
         print(False)
+# Penggunaan fungsi
 segitiga(12,1,1)
 
 #Apa Outputnya?
@@ -33,11 +43,17 @@ segitiga(12,1,1)
 # C. None
 # D. Error
 
+
 def absolute_value(x):
+    # Memeriksa apakah x kurang dari 0
     if x < 0 :
+        # Jika x kurang dari 0, mengembalikan nilai x (mengembalikan nilai positif dari x)
         return x
+    # Blok yang dijalankan jika x kurang dari 0
     else:
+        # Jika x tidak kurang dari 0, mengembalikan nilai x ( tidak mengubah nilai)
         return x
+# Penggunaan fungsi
 print(absolute_value(-5))
 
 #Apa Outputnya?
@@ -47,11 +63,30 @@ print(absolute_value(-5))
 # C. 5
 # D. 2
 
+# Mendefinisikan fungsi absolute_value dengan satu parameter, yaitu a
+def absolute_value(a):
+    # Mengembalikan nilai absolute_value dari x menggunakan bulit in function abs()
+    return abs(a)
+# Penggunaan fungsi
+print(absolute_value(-4))
+
+#Apa Outputnya?
+
+# A. 6
+# B. -4
+# C. 4
+# D. 2
+
+# Mendefinisikan fungsi absolute_value dengan satu parameter, yaitu c
 def absolute_value(c):
+    # Memeriksa apakah c kurang dari 0
     if c < 0:
+        # Jika c kurang dari 0, maka mengembalikan nilai c (mengembalikan nilai positif dari c)
         return -c
+    # Blok yang akan dijalankan jika c kurang dari 0 (tidak mengubah nilai)
     else:
         return c
+# Penggunaan fungsi
 print(absolute_value(-5))
 
 #Apa Outputnya?
@@ -61,14 +96,23 @@ print(absolute_value(-5))
 # C. -5
 # D. 2
 
+# Mendefinisikan fungsi compare dengan dua parameter, yaitu x dan y
 def compare(x,y):
+    # Memeriksa apakah x lebih besar dari y
     if x > y:
+        # Jika x lebih besar dari y, maka mengembalikan nilai 1
         return 1
+    # Blok dijalankan jika x tidak lebih besar dari y, tetapi x sama dengan y
     elif x == y:
+        # Jika x sama dengan y, mengembalikan nilai 0
         return 0
+    # Blok yang dijalankan jika x tidak lebih besar dari y, dan x tidak sama dengan y
     else:
+        # Memeriksa apakah x lebih kecil dari y
         if x < y:
+            # jika x lebih kecil dari y, maka mengembalikan nilai -1
             return -1
+# Penggunaan fungsi
 print(compare(-1,-2))
 
 #Apa Outputnya?
@@ -78,11 +122,18 @@ print(compare(-1,-2))
 # C. 0
 # D. 2
 
+# Mendefinisikan fungsi distance dengan empat parameter 
 def distance(x1,y1,x2,y2):
+    # Menghitung selisih antara x2 dan x1
     dx = x2 - x1
+    # Menghitung selisih antara y2 dan y1
     dy = y2 - y1
+    # Menghitung kuadarat jarak antara dua titik menggunakan pyhtgoras
     squared = dx**2 + dy**2
+    # Mencetak nilai
     print("Kuadrat: ", squared)
+
+# Penggunaan fungsi
 distance(1,2,4,6)
 
 #Apa Outputnya?
@@ -862,3 +913,4 @@ print(membaca(file_name = 'zaki.txt'))
 # B. "Seharusnya yang lebih kuat membantu yang lebih lemah, dan berlebih membantu yang kekurangan."
 # C. Error
 # D. A & B benar!
+
