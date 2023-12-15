@@ -305,7 +305,9 @@ print(palindrome("ab"))
 # D. b
 
 def palindrome(middle):
+    # Mengembalikan bagian dari string 'middle' dimulai dari indeks 1 hingga indeks terakhir -1
     return middle [1:-1]
+# Penggunaan fungsi
 print(palindrome(" "))
 
 #Apa Outputnya?
@@ -316,10 +318,14 @@ print(palindrome(" "))
 # D. 1
 
 def is_palindrome(karakter):
+    # Memeriksa apakah string 'karakter' sama ketika dibaca dari depan maupun dari belakang
     if karakter == karakter[::-1]:
+        # Jika kondisinya di atas benar, mencetak True
         print (True)
     else:
+        # Jika kondisi di atas salah, mencetak False
         print(False)
+# Penggunaan fungsi
 is_palindrome("radar")
 
 #Apa Outputnya?
@@ -331,7 +337,9 @@ is_palindrome("radar")
 
 
 def is_palindrome(num):
+    # Mengembalikan hasil perbandingan apakah isi dari 'num' sama saat dibaca dari depam maupun dari belakang
     return num == num[::-1]
+# Penggunaan fungsi
 print(is_palindrome([1,2,1]))
 
 #Apa Outputnya?
@@ -341,7 +349,9 @@ print(is_palindrome([1,2,1]))
 # C. Error
 # D. 4
 
+# Mendefisikan variabel x dengan memberikan value 5
 x = 5
+# Mencetak value variable x
 print(x)
 
 #Apa Outputnya?
@@ -351,7 +361,9 @@ print(x)
 # C. 5.0
 # D. 5
 
+# Mendefisikan variabel x dengan memberikan value 7
 x = 7
+# Mencetak value variable x
 print(x)
 
 #Apa Outputnya?
@@ -361,9 +373,13 @@ print(x)
 # C. 7.0
 # D. 7
 
+# Mendefisikan variable a dan memerikan nilai 5
 a = 5
+# Mendefisikan variable b dan memberikan nilai sama seperti a
 b = a
+# Mengubah nilai variable a menjadi 3
 a = 3
+# mencetak nilai variable a
 print(a)
 
 #Apa Outputnya?
@@ -373,9 +389,13 @@ print(a)
 # C. 3
 # D. 5
 
+# Mendefisikan variable x dan memberikan nilai 4
 x = 4
+# Menambah 1 ke nilai variable x
 x = x + 1
+# Mengganti nilai variable x dengan 2
 x = 2
+# mencetak nilai variable x
 print(x)
 
 #Apa Outputnya?
@@ -385,8 +405,11 @@ print(x)
 # C. 4
 # D. 5
 
+# Mendefisikan variable x dan memberikan nilai 0
 x = 0
+# Menambah 1 ke nilai variable x
 x = x + 1
+# Mencetak nilai variable x
 print(x)
 
 #Apa Outputnya?
@@ -396,8 +419,11 @@ print(x)
 # C. 4
 # D. 5
 
+# Mendefisikan variable x dan memebrikan nilai 0
 x = 0
+# Mengurangi 1 nilai variable x
 x = x - 1
+# Mencetak nilai variable x
 print(x)
 
 #Apa Outputnya?
@@ -408,10 +434,15 @@ print(x)
 # D. 5
 
 def countdown(n):
+    # Memulai loop while yang akan berjalan selama nilai n lebih besar dari 0
     while n > 0:
+        # Mencetak nilai n
         print(n)
+        # Mengurangi nilai n sebesar 1
         n = n - 1
+        # Mencetak teks 'Meledak!'
         print("Meledak!")
+# Penggunaan fungsi
 countdown(1)
 
 #Apa Outputnya?
@@ -422,12 +453,18 @@ countdown(1)
 # D. 0
 
 def sequence(n):
+    # Memulai loop while yang akan berjaln selama n tidak sama dengan 1
     while n != 1:
+        # Mencetak nilai n
         print(n)
+        # Memerikasa apakah n adalah bilangan genap
         if n % 2 == 0:
+            # Jika genap, bagi n dengan 2
             n = n / 2
         else:
+            # Jika ganjil, lakukan operasi n * 3 + 1
             n - n * 3 + 1
+# Penggunaan fungsi
 sequence(2)
 
 #Apa Outputnya?
@@ -450,14 +487,21 @@ sequence(2)
 # C. Error
 # D. None
 
-
+# Mendefisikan variable x dan memebrikan nilai 4
 x = 4
+# Mendefisikan variable a dan memberikan nilai 2
 a = 2
+# While loop yang akan terus berjalan
 while True:
+    # Mencetak nilai variable x
     print(x)
+    # Menghitung nilai baru y berdasarkan rumus metode newthon raphson
     y = int((x + a / x) / 2)
+    # Memeriksa apakah nilai y sama dengan nilai x
     if y == x: 
+        # Jika ya, keluar dari loop
         break
+    # Menetapkan nilai x menjadi nilai y untuk iterasi selanjutnya
     x = y
 #Apa Outputnya?
 
@@ -466,8 +510,11 @@ while True:
 # C. 1
 # D. Semua benar!
 
+# Mendefinisikan variable fruit dan memberikan nilai string 'Banana'
 fruit = "Banana"
+# Mengaksek karakter pertama dari string 'fruit' dan menyinpan dalam variable letter
 letter = fruit [0]
+# Mencetak nilai variable 'letter'
 print(letter)
 
 #Apa Outputnya?
@@ -477,9 +524,13 @@ print(letter)
 # C. a
 # D. n
 
+# Mendefinisikan variable 'fruit' dan memberikan nilai string 'Banana'
 fruit = "Banana"
+# Mengaksek karakter kedua dari string 'fruit' (indeks 1), dan menyimpan dalam variabel 'i'
 i = fruit[1]
+# Membuat list baru yang berisi nilai dari variable 'i'
 result = [i]
+# Mencetak nilai dari variable 'result
 print(result)
 
 #Apa Outputnya?
@@ -489,8 +540,11 @@ print(result)
 # C. a
 # D. n
 
+# Mendefiniksan variable 'fruit' dan memebrikan nilai string
 fruit = "Banana"
+# Menghitung panjang (jumlah karakter) dari string 'fruit' dan menyimpan dalam variable 'result'
 result = len(fruit)
+# Mencetak nilai dari variable result
 print(result)
 
 #Apa Outputnya?
@@ -500,10 +554,14 @@ print(result)
 # C. a
 # D. n
 
+# Mendefiniksan variable 'fruit' dan memebrikan nilai string
 fruit = "Banana"
+# Menghitung panjang (jumlah karakter) dari string 'fruit' dan menyimpan dalam variable 'length'
 length = len(fruit)
-last = fruit[-1]
-print(length, last)
+# Mengaksek karakter terakhir dari strig 'fruit' dan menyimpan dalam variable 'lasts'
+lasts = fruit[-1]
+# mencetak panajang string dan karakter terakhit
+print(length, lasts)
 
 #Apa Outputnya?
 
@@ -512,11 +570,17 @@ print(length, last)
 # C. a
 # D. n
 
+# Mendefinisikan variable 'fruit' dan memberikan nilai string
 fruit = "Banana"
+# Mendefinisikan variable index dan memberikan nilai 3
 index = 3
+# Memulai loop while dengan kondisi, selama nilai 'index' kurang dari panjang string 'fruit'
 while index < len(fruit):
+    # Mengakses karakter pada indeks 'index' dari string 'fruit' dan menyimpan dalam variable 'letter'
     latter = fruit[index]
+    # Mencetak nilai variable letter
     print(latter)
+    # Menambahkan 1 ke nilai 'index' untuk beralih ke indeks berilitnya dalam iterasi selanjutnya
     index = index + 1
 
 #Apa Outputnya?
@@ -526,10 +590,13 @@ while index < len(fruit):
 # C. ana
 # D. n
 
+# Mendefinisikan string "prefixes" yang berisi huruf-huruf 'JKLMNOPQ'
 prefixes = "JKLMNOPQ"
+# Mendefinisikan string "suffix" yang berisi 'ack'
 suffix = 'ack'
-
+# Melakukan iterasi pada setiap huruf dalam string "prefixes"
 for latter in prefixes:
+     # Mencetak gabungan antara huruf dan string "suffix"
     print(latter + suffix)
 
 #Apa Outputnya?
@@ -540,9 +607,13 @@ for latter in prefixes:
 # D. Pack, Qack
 
 def karakter(satu):
+     # Memeriksa apakah parameter "satu" bernilai True (tidak kosong atau tidak None)
     if satu:
+        # Mengambil substring dari "satu" dari indeks 0 hingga 3 (indeks ke-4) dan menyimpannya dalam variabel "dua"
         dua = satu [0:4]
+        # Mencetak nilai dari variabel "dua"
         print(dua)
+# Penggunaan fungsi
 karakter("Ular Python")
 
 #Apa Outputnya?
@@ -553,9 +624,13 @@ karakter("Ular Python")
 # D. Semua benar!
 
 def karakter(tiga):
+     # Memeriksa apakah parameter "tiga" bernilai True (tidak kosong atau tidak None)
     if tiga:
+        # Mengambil substring dari "tiga" dari indeks 5 hingga 10 (indeks ke-11) dan menyimpannya dalam variabel "empat"
         empat = tiga [5:11]
+        # Mencetak nilai dari variabel "empat"
         print(empat)
+# Penggunaan fungsi
 karakter("Ular Python")
 
 #Apa Outputnya?
@@ -566,9 +641,13 @@ karakter("Ular Python")
 # D. Semua benar!
 
 def fruit(apel):
+    # Memeriksa apakah parameter "apel" bernilai True (tidak kosong atau tidak None)
     if apel:
+        # Mengambil substring dari "apel" mulai dari indeks 0 hingga indeks 2 (indeks ke-3) dan menyimpannya dalam variabel "result"
         result = apel[:3]
+        # Mencetak nilai dari variabel "result"
         print(result)
+# Penggunaan fungsi
 fruit("Apel")
 
 #Apa Outputnya?
@@ -579,9 +658,13 @@ fruit("Apel")
 # D. Semua benar!
 
 def fruit(apel):
+    # Memeriksa apakah parameter "apel" bernilai True (tidak kosong atau tidak None)
     if apel:
+        # Mengambil substring dari "apel" mulai dari indeks 3 hingga akhir dan menyimpannya dalam variabel "result"
         result = apel[3:]
+        # Mencetak nilai dari variabel "result"
         print(result)
+# Penggunaan fungsi
 fruit("Apel")
 
 #Apa Outputnya?
@@ -592,9 +675,13 @@ fruit("Apel")
 # D. Semua benar!
 
 def fruit(apel):
+    # Memeriksa apakah parameter "apel" bernilai True (tidak kosong atau tidak None)
     if apel:
+        # Mengambil substring dari "apel" mulai dari indeks 3 hingga (indeks 3 - 1), yang menghasilkan string kosong, dan menyimpannya dalam variabel "result"
         result = apel[3:3]
+         # Mencetak nilai dari variabel "result"
         print(result)
+# Penggunaan fungsi
 fruit("Apel")
 
 #Apa Outputnya?
@@ -605,9 +692,13 @@ fruit("Apel")
 # D. Empty string
 
 def greeting(a):
+    # Memeriksa apakah parameter "a" bernilai True (tidak kosong atau tidak None)
     if a:
+        # Mengganti karakter pertama dalam string "a" dengan "M" dan menyimpannya dalam variabel "new_greeting"
         new_gretting = "M" + a[1:]
+        # Mencetak nilai dari variabel "new_greeting"
         print(new_gretting)
+# Penggunaan fungsi
 greeting("Hallo, Tante Panas!")
 
 #Apa Outputnya?
@@ -618,12 +709,19 @@ greeting("Hallo, Tante Panas!")
 # D. Mallo, Tante Panas!
 
 def find(word, letter,):
+    # Inisialisasi variabel "index" dengan nilai 0
     index = 0
+    # Memulai loop while untuk iterasi melalui setiap karakter dalam string "word"
     while index < len(word):
+        # Memeriksa apakah karakter pada indeks "index" sama dengan karakter "letter"
         if word[index] == letter:
+            # Jika ya, kembalikan nilai indeks
             return index
+        # Jika tidak, tambahkan 1 ke nilai "index" untuk beralih ke karakter berikutnya
         index += 1
+    # Jika tidak ada karakter yang sesuai, kembalikan nilai -1
     return -1
+# Penggunaan fungsi
 print(find("Zaki", "Zaki"))
 
 #Apa Outputnya?
