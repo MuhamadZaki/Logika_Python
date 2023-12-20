@@ -1049,10 +1049,10 @@ print(reads(file_name = 'zaki.txt'))
 
 #Apa Outputnya?
 
-# A. Author: Muhamad Zaki
-# B. Junior Python Developer
-# C. Error
-# D. A & B benar!
+# A. aaaaaaaaaaaaaaaccccc
+# B. File tidak ditemukan!
+# C. Gagal mendecode, karena menggunakan encoding yang salah!
+# D. Terjadi kesalahan!
 
 print('\n')
 
@@ -1067,17 +1067,19 @@ def new_reads (data, encoding = 'utf-8'):
         print(word)
 # Penggunaan fungsi
 new_reads(data ='zaki.txt')
+
 #Apa Outputnya?
 
-# A. Author: Muhamad Zaki
-# B. Junior Python Developer
-# C. Error
-# D. A & B benar!
+# A. aaaaaaaaaaaaaaaccccc
+# B. aaaaaaaaaaaaaaabbbbb
+# C. aaaaaaaaaaaaaaaddddd
+# D. aaaaaaaaaaaaaaaeeeee
+# E. Semua benar!
 
 print('\n')
 
 
-def reads_two(datas):
+def reads_one(datas):
     try:
         # Membuka file dengan nama yang diberikan dalam parameter'datas'
         with open(datas, encoding='utf-8') as files:
@@ -1100,6 +1102,39 @@ def reads_two(datas):
         # Mengembalikan pesan kesalahn berupa informasi
         return f'{no}, Invalid!'
 # Penggunaan fungsi
-print(reads_two('zaki.txt'))
+print(reads_one('zaki.txt'))
 
+#Apa Outputnya?
 
+# A. aaaaaaaaaaaaaaaccccc
+# B. aaaaaaaaaaaaaaabbbbb
+# C. aaaaaaaaaaaaaaaddddd
+# D. aaaaaaaaaaaaaaaeeeee
+# E. Semua benar!
+
+print('\n')
+
+def has_no_e(datas, encoding='utf-8'):
+    try:
+        with open(datas, encoding=encoding) as files:
+            no_e  =[]
+            for line in files:
+                words = line.strip().split()
+                no_e.extend([word for word in words if 'e' not in word])
+            return no_e
+    
+    except UnicodeEncodeError:
+        return f'{datas}, menggunakan encoding yang salah!'
+    
+    except Exception as no:
+        return f'{no} Invalid!'
+
+print('Hasil =',has_no_e(datas='zaki.txt'))
+
+#Apa Outputnya?
+
+# A. aaaaaaaaaaaaaaaccccc
+# B. aaaaaaaaaaaaaaabbbbb
+# C. aaaaaaaaaaaaaaaddddd
+# D. aaaaaaaaaaaaaaaeeeee
+# E. None
