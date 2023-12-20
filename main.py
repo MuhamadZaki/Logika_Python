@@ -1091,9 +1091,15 @@ def reads_two(datas):
                 long_words.extend([word for word in words if len(word) >= 20])
             # Mengembalikan list 'long_words yang berisi kata-kata dengan panjang lebih dari atau sama dengan 20 karakter
             return long_words
+    # Menangkap ekspresi (Exception) jila file tidak ditemukan
+    except FileNotFoundError:
+        # Mengembalikan pesan kesalahn beserta informasi 
+        return f'File {datas} File tidak ditemukan!'
     # Menangkap ekpresi (Exception) jika terjadi kesalahan saat membuka atau membaca file
     except Exception as no:
         # Mengembalikan pesan kesalahn berupa informasi
         return f'{no}, Invalid!'
-# Pengunaan fungsi
+# Penggunaan fungsi
 print(reads_two('zaki.txt'))
+
+
