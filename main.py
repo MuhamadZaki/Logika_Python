@@ -1020,6 +1020,8 @@ print(result)
 # C. Error
 # D. A & B benar!
 
+print('\n')
+
 def reads(file_name, encoding='utf-8'):
     try:
         # Membuka file dengan menentukan encoding
@@ -1043,12 +1045,55 @@ def reads(file_name, encoding='utf-8'):
         # Meneangani kesalahan umum lainnya
         return f'Terjadi kesalahan! {z}'
 # Penggunaan fungsi
-print(reads(file_name = 'dosa.txt'))
+print(reads(file_name = 'zaki.txt'))
 
 #Apa Outputnya?
 
 # A. Author: Muhamad Zaki
-# B. "Seharusnya yang lebih kuat membantu yang lebih lemah, dan berlebih membantu yang kekurangan."
+# B. Junior Python Developer
 # C. Error
 # D. A & B benar!
 
+print('\n')
+
+def new_reads (data, encoding = 'utf-8'):
+    # Membuka file dengan nama yang diberikan dalam metode 'r', dengan ecoding yang diberikan
+    pin = open(data, encoding=encoding)
+    # Iterasi melalui setiap baris dalam file
+    for line in pin:
+        # Menghapus karakter whitespace di awal dan akhir setiap baris, kemudian menyimpan dalam variable word
+        word = line.strip()
+        # Menampilkan setiap baris yang telah distrip ke layar
+        print(word)
+# Penggunaan fungsi
+new_reads(data ='zaki.txt')
+#Apa Outputnya?
+
+# A. Author: Muhamad Zaki
+# B. Junior Python Developer
+# C. Error
+# D. A & B benar!
+
+print('\n')
+
+
+def reads_two(datas):
+    try:
+        # Membuka file dengan nama yang diberikan dalam parameter'datas'
+        with open(datas, encoding='utf-8') as files:
+            # Membuat list kosong untuk menyimpan kata-kata yang memiliki panjang lebih dari atau sama dengan 20 karakter
+            long_words = []
+            # Iterasi melalui setiap baris dalam file
+            for line in files:
+                # Menghilangkan karakter whitespace dan memisahakn kata-kata dalam satu baris
+                words = line.strip().split()
+                # Menambahkan-kata-kata yang memiliki panjang lebih dari atau sama dengan 20 karakter, ke dalam list 'long_words'
+                long_words.extend([word for word in words if len(word) >= 20])
+            # Mengembalikan list 'long_words yang berisi kata-kata dengan panjang lebih dari atau sama dengan 20 karakter
+            return long_words
+    # Menangkap ekpresi (Exception) jika terjadi kesalahan saat membuka atau membaca file
+    except Exception as no:
+        # Mengembalikan pesan kesalahn berupa informasi
+        return f'{no}, Invalid!'
+# Pengunaan fungsi
+print(reads_two('zaki.txt'))
