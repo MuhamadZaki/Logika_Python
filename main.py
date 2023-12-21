@@ -1133,8 +1133,9 @@ print('Hasil =',has_no_e(datas='zaki.txt'))
 
 #Apa Outputnya?
 
-# A. aaaaaaaaaaaaaaaccccc
-# B. aaaaaaaaaaaaaaabbbbb
-# C. aaaaaaaaaaaaaaaddddd
-# D. aaaaaaaaaaaaaaaeeeee
-# E. None
+# A. aaaaaaaaaaaaaaaccccc,aaaaaaaaaaaaaaabbbbb, aaaaaaaaaaaaaaaddddd, aaaaaaaaaaaaaaaeeeee
+# B. Menggunakan encoding yang salah
+# C.  Invalid!
+# D. aaaaaaaaaaaaaaaccccc,aaaaaaaaaaaaaaabbbbb, aaaaaaaaaaaaaaaddddd
+# E. Semua benar!
+
