@@ -1078,7 +1078,6 @@ new_reads(data ='zaki.txt')
 
 print('\n')
 
-
 def reads_one(datas):
     try:
         # Membuka file dengan nama yang diberikan dalam parameter'datas'
@@ -1112,30 +1111,34 @@ print(reads_one('zaki.txt'))
 # D. aaaaaaaaaaaaaaaeeeee
 # E. Semua benar!
 
-print('\n')
-
+# Membaca isi berkas dan mengembalikan list kata-kata yang tidak mengandung huruf 'e'.
 def has_no_e(datas, encoding='utf-8'):
     try:
+        # Mencoba membuka files menggunakan enkoding yang ditentukan.
         with open(datas, encoding=encoding) as files:
+            # Inisialisasi list kosong untuk menyimpan kata-kata tanpa huruf 'e'.
             no_e  =[]
+             # Iterasi melalui setiap baris dalam files.
             for line in files:
+                 # Menghilangkan spasi di awal dan akhir, kemudian membagi baris menjadi kata-kata.
                 words = line.strip().split()
+                # Menambahkan kata-kata tanpa huruf 'e' ke dalam list no_e.
                 no_e.extend([word for word in words if 'e' not in word])
+            # Mengembalikan list kata-kata tanpa 'e'.
             return no_e
-    
+    # Menangani UnicodeEncodeError, yang terjadi ketika ada masalah dengan enkoding yang ditentukan.
     except UnicodeEncodeError:
         return f'{datas}, menggunakan encoding yang salah!'
-    
+     # Menangani pengecualian lainnya.
     except Exception as no:
         return f'{no} Invalid!'
-
-print('Hasil =',has_no_e(datas='zaki.txt'))
+# Penggunaan fungsi
+print(has_no_e(datas='zaki.txt'))
 
 #Apa Outputnya?
 
 # A. aaaaaaaaaaaaaaaccccc,aaaaaaaaaaaaaaabbbbb, aaaaaaaaaaaaaaaddddd, aaaaaaaaaaaaaaaeeeee
 # B. Menggunakan encoding yang salah
 # C.  Invalid!
-# D. aaaaaaaaaaaaaaaccccc,aaaaaaaaaaaaaaabbbbb, aaaaaaaaaaaaaaaddddd
+# D. aaaaaaaaaaaaaaa,aaaaaaaaaaaaaaabbbbb, aaaaaaaaaaaaaaaddddd
 # E. Semua benar!
-
