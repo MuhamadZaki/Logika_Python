@@ -1142,3 +1142,26 @@ print(has_no_e(datas='zaki.txt'))
 # C.  Invalid!
 # D. aaaaaaaaaaaaaaa,aaaaaaaaaaaaaaabbbbb, aaaaaaaaaaaaaaaddddd
 # E. Semua benar!
+
+
+
+def avoids(word, forbidden_words):
+    #Mengembalikan True jika kata tidak mengandung huruf terlarang
+    return not any(letter in forbidden_words for letter in word)
+
+def main():
+    #Meminta pengguna untuk memasukan huruf terlarang tanpa sepasi
+    forbidden_words = input("Masukkan huruf terlarang (tanpa spasi): ")
+    #Membuka file 'more.txt' dengan mode baca ('r') dan menggunakan encoding utf-8
+    with open('more.txt', 'r', encoding='utf-8') as file:
+        # Membaca isi file, menghapus whitespace di kedua ujungnya, dan memisahkan kata-kata menjadi list
+        words = file.read().strip().split()
+    #Menggunakan list comprehension untuk membuat list kata tanpa huruf terlarang
+    words_without_forbidden_words = [word for word in words if avoids(word, forbidden_words)]
+    #Mencetak jumlah kata tanpa huruf terlarang
+    print(f"Jumlah kata tanpa huruf terlarang: {len(words_without_forbidden_words)}")
+#Program utama
+if __name__ == "__main__":
+    main()
+
+#Apa Outputnya?
