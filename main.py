@@ -1045,14 +1045,10 @@ def reads(file_name, encoding='utf-8'):
         # Meneangani kesalahan umum lainnya
         return f'Terjadi kesalahan! {z}'
 # Penggunaan fungsi
-print(reads(file_name = 'zaki.txt'))
+print(reads(file_name = 'satu.txt'))
 
 #Apa Outputnya?
 
-# A. aaaaaaaaaaaaaaaccccc
-# B. File tidak ditemukan!
-# C. Gagal mendecode, karena menggunakan encoding yang salah!
-# D. Terjadi kesalahan!
 
 print('\n')
 
@@ -1066,15 +1062,10 @@ def new_reads (data, encoding = 'utf-8'):
         # Menampilkan setiap baris yang telah distrip ke layar
         print(word)
 # Penggunaan fungsi
-new_reads(data ='zaki.txt')
+new_reads(data ='satu.txt')
 
 #Apa Outputnya?
 
-# A. aaaaaaaaaaaaaaaccccc
-# B. aaaaaaaaaaaaaaabbbbb
-# C. aaaaaaaaaaaaaaaddddd
-# D. aaaaaaaaaaaaaaaeeeee
-# E. Semua benar!
 
 print('\n')
 
@@ -1101,15 +1092,10 @@ def reads_one(datas):
         # Mengembalikan pesan kesalahn berupa informasi
         return f'{no}, Invalid!'
 # Penggunaan fungsi
-print(reads_one('zaki.txt'))
+print(reads_one('satu.txt'))
 
 #Apa Outputnya?
 
-# A. aaaaaaaaaaaaaaaccccc
-# B. aaaaaaaaaaaaaaabbbbb
-# C. aaaaaaaaaaaaaaaddddd
-# D. aaaaaaaaaaaaaaaeeeee
-# E. Semua benar!
 
 # Membaca isi berkas dan mengembalikan list kata-kata yang tidak mengandung huruf 'e'.
 def has_no_e(datas, encoding='utf-8'):
@@ -1133,18 +1119,30 @@ def has_no_e(datas, encoding='utf-8'):
     except Exception as no:
         return f'{no} Invalid!'
 # Penggunaan fungsi
-print(has_no_e(datas='zaki.txt'))
+print(has_no_e(datas='satu.txt'))
 
 #Apa Outputnya?
 
-# A. aaaaaaaaaaaaaaaccccc,aaaaaaaaaaaaaaabbbbb, aaaaaaaaaaaaaaaddddd, aaaaaaaaaaaaaaaeeeee
-# B. Menggunakan encoding yang salah
-# C.  Invalid!
-# D. aaaaaaaaaaaaaaa,aaaaaaaaaaaaaaabbbbb, aaaaaaaaaaaaaaaddddd
-# E. Semua benar!
 
 
+"""
+def avoids(word, forbidden_word):
+    return not any(letter in forbidden_word for letter in word)
 
+def main():
+    forbidden_word = input('Masukan kata terlarang, tanpa sepasi = ')
+    with open('dua.txt', 'r', encoding = 'utf-8') as files:
+        words = files.read().strip().split()
+        without_forbidden_words = [word for word in words if avoids(word,forbidden_word)]
+        print(f'Jmlah kata tidak terlarang = {without_forbidden_words}, {len(without_forbidden_words)}')
+if __name__ == '__main__':
+    main()
+
+# Apa Outputnya?
+
+"""
+
+"""
 def avoids(word, forbidden_words):
     #Mengembalikan True jika kata tidak mengandung huruf terlarang
     return not any(letter in forbidden_words for letter in word)
@@ -1153,15 +1151,53 @@ def main():
     #Meminta pengguna untuk memasukan huruf terlarang tanpa sepasi
     forbidden_words = input("Masukkan huruf terlarang (tanpa spasi): ")
     #Membuka file 'more.txt' dengan mode baca ('r') dan menggunakan encoding utf-8
-    with open('more.txt', 'r', encoding='utf-8') as file:
+    with open('dua.txt', 'r', encoding='utf-8') as files:
         # Membaca isi file, menghapus whitespace di kedua ujungnya, dan memisahkan kata-kata menjadi list
-        words = file.read().strip().split()
+        words = files.read().strip().split()
     #Menggunakan list comprehension untuk membuat list kata tanpa huruf terlarang
     words_without_forbidden_words = [word for word in words if avoids(word, forbidden_words)]
     #Mencetak jumlah kata tanpa huruf terlarang
-    print(f"Jumlah kata tanpa huruf terlarang: {len(words_without_forbidden_words)}")
+    print(f"Huruf terlarang: {words_without_forbidden_words}, Jumlah = {len(words_without_forbidden_words)}")
 #Program utama
 if __name__ == "__main__":
     main()
 
 #Apa Outputnya?
+
+'Hoe alfalfa'
+'acefhlo'
+
+"""
+
+def uses_only(words, letters):
+    # Memeriksa apakah semua huruf dalam 'words' ada dalam string 'letters'
+    try:
+        return all(letter in letters for letter in words)
+    # Menangani TypeError jika input bukan string
+    except TypeError:
+        print('Invalid! Masukan tipe string!')
+# Blok utama
+try:
+    # Mendefinisikan string input
+    word_contents= 'Muhamad Zaki'
+    letter_contents= 'acefhlo'
+    # Memeriksa apakah fungsi mengembalikan True untuk input yang diberikan
+    if uses_only(word_contents, letter_contents):
+        print(f' Kalimat {word_contents}, hanya menggunakan huruf {letter_contents}')
+    else:
+        print(f' Kalimat {word_contents}, tidak menggunakan huruf {letter_contents}')
+# Menangani segala pengecualian yang mungkin terjadi
+except Exception as n:
+    print(f'Terjadi kesalahan! {n}')
+# Blok lain untuk pengujian dengan input yang berbeda
+try:
+    # Mendefinisikan huruf lainnya
+    another_letters = 'ace'
+    # memeriksa apakah fungsi mengembalikan True untuk input yang baru
+    if uses_only(another_letters, letter_contents):
+        print(f' Kalimat {another_letters}, hanya menggunakan huruf {letter_contents}')
+    else:
+        print(f' Kalimat {another_letters}, tidak menggunakan huruf {letter_contents}')
+# Menangani segala pengecualian yang mungkin terjadi
+except Exception as n:
+    print(f'Terjadi kesalahan! {n}')
