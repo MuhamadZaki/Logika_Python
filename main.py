@@ -1176,28 +1176,50 @@ def uses_only(words, letters):
     # Menangani TypeError jika input bukan string
     except TypeError:
         print('Invalid! Masukan tipe string!')
+
+
 # Blok utama
 try:
-    # Mendefinisikan string input
+    # Mendefinisikan variable dengan nilai string
     word_contents= 'Muhamad Zaki'
-    letter_contents= 'acefhlo'
-    # Memeriksa apakah fungsi mengembalikan True untuk input yang diberikan
-    if uses_only(word_contents, letter_contents):
+    # Casefold mencegah case sensitif ya mamas gemoi
+    letter_contents='Acefhlo'
+    
+    # Memeriksa apakah fungsi mengembalikan True dan False
+    if uses_only(word_contents, letter_contents.casefold().strip()):
         print(f' Kalimat {word_contents}, hanya menggunakan huruf {letter_contents}')
     else:
         print(f' Kalimat {word_contents}, tidak menggunakan huruf {letter_contents}')
 # Menangani segala pengecualian yang mungkin terjadi
 except Exception as n:
     print(f'Terjadi kesalahan! {n}')
-# Blok lain untuk pengujian dengan input yang berbeda
+# Blok lain untuk pengujian yang berbeda
 try:
-    # Mendefinisikan huruf lainnya
-    another_letters = 'ace'
-    # memeriksa apakah fungsi mengembalikan True untuk input yang baru
-    if uses_only(another_letters, letter_contents):
+    # Mendefinisikan variable dengan nilai string
+    another_letters = 'aceofhello'
+    # memeriksa apakah fungsi mengembalikan True dan False (baru)
+    if uses_only(another_letters, letter_contents.casefold().strip()):
         print(f' Kalimat {another_letters}, hanya menggunakan huruf {letter_contents}')
     else:
         print(f' Kalimat {another_letters}, tidak menggunakan huruf {letter_contents}')
 # Menangani segala pengecualian yang mungkin terjadi
 except Exception as n:
     print(f'Terjadi kesalahan! {n}')
+
+def uses_all(words,required_letters):
+    try:
+        return all(letter in required_letters for letter in words)
+    except TypeError:
+        return False
+
+example_words = 'aeiouy'
+vokal_ones = 'aeiou'
+vokal_twos = 'aeiouy'
+try:
+    result_ones = uses_all(example_words, vokal_ones)
+    print(f'Apakah kata {example_words}, menggunakan huruf {vokal_ones} = {result_ones}')
+
+    result_twos = uses_all(example_words, vokal_twos)
+    print(f'Apakah kata {example_words}, menggunakan huruf {vokal_twos} = {result_twos} ')
+except Exception as n:
+    print(f'Terjadi kesalahan!{n}')
