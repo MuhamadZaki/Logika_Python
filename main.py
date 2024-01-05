@@ -1123,8 +1123,6 @@ print(has_no_e(datas='satu.txt'))
 
 #Apa Outputnya?
 
-
-
 """
 def avoids(word, forbidden_word):
     return not any(letter in forbidden_word for letter in word)
@@ -1140,9 +1138,7 @@ if __name__ == '__main__':
 
 # Apa Outputnya?
 
-"""
 
-"""
 def avoids(word, forbidden_words):
     #Mengembalikan True jika kata tidak mengandung huruf terlarang
     return not any(letter in forbidden_words for letter in word)
@@ -1163,10 +1159,6 @@ if __name__ == "__main__":
     main()
 
 #Apa Outputnya?
-
-'Hoe alfalfa'
-'acefhlo'
-
 """
 
 def uses_only(words, letters):
@@ -1206,20 +1198,198 @@ try:
 except Exception as n:
     print(f'Terjadi kesalahan! {n}')
 
+# Apa Outputnya?
+
 def uses_all(words,required_letters):
+    # Menggunakan blok try-except untuk menangani potensi TypeError (misalnya, jika words tidak dapat di-iterasi).
     try:
+         # Menggunakan fungsi all() untuk memeriksa apakah semua huruf dalam required_letters ada di dalam string words.
         return all(letter in required_letters for letter in words)
     except TypeError:
         return False
-
+# Mendefinisian variable bernilai string, contoh berisi vokal
 example_words = 'aeiouy'
+# Mendefinisikan dua variable bernilai string, untuk pengujian
 vokal_ones = 'aeiou'
 vokal_twos = 'aeiouy'
 try:
+    # Memanggil fungsi use_all dengan example_words, vokal_ones dan menyimpan hasilnya di result_ones
     result_ones = uses_all(example_words, vokal_ones)
     print(f'Apakah kata {example_words}, menggunakan huruf {vokal_ones} = {result_ones}')
-
+    # Memanggil fungsi use_all dengan example_words, vokal_twos dan menyimpan hasilnya di result_twos
     result_twos = uses_all(example_words, vokal_twos)
     print(f'Apakah kata {example_words}, menggunakan huruf {vokal_twos} = {result_twos} ')
+# Menangani segala jenis kesalahan yang mungkin terjadi
 except Exception as n:
     print(f'Terjadi kesalahan!{n}')
+
+# Apa Outputnya?
+    
+def is_abecedarian(word):
+    """
+    Fungsi untuk memeriksa apakah huruf-huruf dalam sebuah kata muncul dalam urutan abjad.
+    Menangani kemungkinan kesalahan jika input tidak dapat diurutkan.
+    """
+    try:
+        # Menggunakan sorted() untuk mengurutkan huruf-huruf dalam kata dan membandingkannya dengan kata asli.
+        return word == ''.join(sorted(word))
+    except TypeError:
+        # Menangani TypeError jika input tidak dapat diurutkan (bukan string).
+        print(f"Kesalahan: Input {word} tidak dapat diurutkan.")
+        return False
+
+def count_abecedarian_words(word_list):
+    """
+    Fungsi untuk menghitung jumlah kata abecedarian dalam sebuah daftar kata.
+    """
+    # Menggunakan list comprehension untuk memfilter kata-kata yang bersifat abecedarian.
+    abecedarian_words = [word for word in word_list if is_abecedarian(word)]
+    
+    # Mengembalikan jumlah kata abecedarian dan daftar kata-kata tersebut.
+    return len(abecedarian_words), abecedarian_words
+
+# Daftar kata untuk diuji
+word_list = ["abc", "hello", "aberration", "alphabet", "ace", "aab", "xyz", 123]
+
+try:
+    # Memanggil fungsi count_abecedarian_words untuk mendapatkan hasil.
+    num_abecedarian, abecedarian_list = count_abecedarian_words(word_list)
+
+    # Mencetak hasil
+    print(f"Jumlah kata abecedarian: {num_abecedarian}")
+    print(f"Kata-kata abecedarian: {abecedarian_list}")
+
+except Exception as e:
+    # Menangkap exception apapun yang mungkin terjadi selama eksekusi.
+    print(f"Terjadi kesalahan: {e}")
+
+# Apa Outputnya?
+    
+def has_no_e(word):
+
+    for letter in word:
+        if letter == 'e':
+            return True
+    return False
+
+print(has_no_e('a'))
+
+# Apa Outputnya?
+
+def avoids(words, forbiddens):
+    for letter in words:
+        if letter == forbiddens:
+            return False
+    return True
+print(avoids('e', 'e'))
+
+# Apa Outputnya?
+
+def uses_only(words,avaible):
+    for letter in words:
+        if letter not in avaible:
+            return False
+    return True
+print(uses_only('c', 'b'))
+
+# Apa Outputnya?
+
+def user_all(word, required):
+    for letter in required:
+        if letter not in word:
+            return False
+    return True
+
+# Apa Outputnya?
+
+def is_abecedarian(word):
+    # Menginisialisasi variable 'previous' dengan karakter pertama dari word atau list
+    previous = word[0]
+    # Melakukan iterasi melalui karakter-karakter dari indeks kedua hingga akhir dari word atau list
+    for letter in word[1:]:
+        # Memeriksa apakah karakter saat ini kurang dari karakter sebelumnya
+        if letter < previous:
+            # Jika iya, mengambalikan False, karena tidak dalam urutan abjad
+            return False
+        # Memperbarui 'previous' dengan karakter saat ini untuk digunakan pada iterasi berikutnya
+        previous = letter
+    # Jika semua karakter telah diperiksa dan tidak ada yang melanggar aturan, mengembalikan True
+    return True
+# Penggunaan fungsi
+print(is_abecedarian([1,2,3,4,5]))
+
+# Apa Outputnya?
+
+def is_abecedarian(word):
+    # Jika panjang word atau list kurang dari atau sama dengan 1, itu sudah benar secara abjad
+    if len(word) <=1:
+        return True
+    # Memeriksa apakah karakter pertama lebih besar dari karakter kedua
+    if word[0] > word[1]:
+        return False
+    # Memanggil fungsi is_abecedarian secara rekursif dangan memotong karakter pertama dari word atau list
+    return is_abecedarian(word[1:])
+# Pengguaan fungsi
+print(is_abecedarian([1,2,3,4,5]))
+
+# Apa Outputnya?
+
+def is_abecedarian(word):
+    # Inisialisasi variable i sebagai indeks awal
+    i = 0
+    # Selama i kurang dari panjang word dikurangi 1
+    while i < len(word)-1:
+        # Memeriksa apakah karakter berikutnya lebih kecil dari karakter saat ini
+        if word[i+1] < word[i]:
+            return False
+        # Memperbarui nilai i, untuk melanjutkan ke karakter berikutnya
+        i = i+1
+    return True
+# Penggunaan fungsi
+print(is_abecedarian([1,2,3,4,5]))
+
+# Apa outputnya?
+
+def is_palindrome(word):
+    # Inisialisasi dua indeks i dan j
+    i = 0
+    j = len(word)-1
+    """
+    Iterasi, selama i kurang dari j (belum mencapai pertengahan atau lebih)...
+    dilakukan perbandingan karakter dari kedua ujung word atau list
+
+    """
+    
+    while i<j:
+        if word[i] != word[j]:
+            return False
+        # Memperbarui nilai i dan j untuk melanjutkan ke karakter sebelumnya
+        i = i+1
+        j = j-1
+    return True
+# Penggunaan fungsi
+print(is_palindrome([1,2,3,4,5]))
+
+# Apa Outputnya?
+
+def is_reverse(word1, word2):
+    # Memeriksa apakah panjang kedua word atau list sama
+    if len(word1) != len(word2):
+        return False
+    
+    # Memeriksa apakah setiap karakter pada posisi yang sesuai sama dalam urutan terbalik
+    for i in range(len(word1)):
+        if word1[i] != word2[len(word2) -1 - i]:
+            return False
+    
+    # Jika semua karakter cocok, mengembalikan True
+    return True
+
+def is_palindrome(word):
+    # Memanggil fungsi is_reverse dengan dua parameter yang sama
+    return is_reverse(word, word)
+
+# Penggunaan fungsi
+print(is_palindrome(['radar']))
+
+# Apa Outputnya?
