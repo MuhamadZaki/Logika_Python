@@ -1,6 +1,89 @@
 # Modul math digunakan untuk operasi matematika, seperti sqrt(akar kuadrat) dan pi
 import math
 
+# Membuat set nums dengan elemen
+nums= {1,3,7,6,5}
+"""
+Menghapus elemen 4 dari set nums...
+Jika 4 tidak ada dalam set, discard() tidak melakukan apa-apa
+"""
+nums.discard(4)
+print(nums)
+
+# Apa Outputnya?
+
+"""
+String text, ekspresi 1 + 1 menghasilkan nilai 2...
+Mengambil indeks ke 2 dari text
+"""
+print('text'[1+1])
+
+# Apa Outputnya?
+
+# Tuple nums dengan nilai
+nums= (1,2,3,4,5)
+"""
+Menggunakan slicing untuk membuat tuple baru yaitu nums2...
+Slicing [1:4] mengambil elemen dari index 1 hingga (4-1), yaitu 1,2 dan 3...
+Operator kali 2 mengandakan tuple tersebut
+"""
+nums2= nums[1:4]*2
+print(nums2)
+
+# Apa Outputnya?
+
+# Menambahkan atau menggabungkan list kosong
+zeroz = [] + []
+print(zeroz)
+
+# Apa Outputnya?
+
+# Membuat set kosong
+nums= set()
+# Melakukan iterasi dari 21 hingga 29 dan 30 tidak termasuk
+for num in range(21,30):
+    # Menambahkan setiap angka dalam rentang ke dalam set nums
+    nums.add(num)
+print(nums)
+
+# Apa Outputnya?
+
+# Membuat set kosong
+nums = set()
+# Melakukan iterasi dari 21 hingga 29 dan 30 tidak termasuk
+for num in range(21,30):
+    # Memeriksa apakah angka adalah ganjil
+    if num % 2:
+        # Jika angka ganjil, tambahkan ke dalam set nums
+        nums.add(num)
+print(nums)
+
+# Apa Outputnya?
+
+# membuat set kosong
+nums = set()
+# Melakukan itersi dari 21 hingga 29 dan 30 tidak termasuk
+for num in range(21,30):
+    # memeriksa apakah angka adalah genap
+    if num % 2 == 0:
+        # Jika angka genap, tambahkan ke dalam set nums
+        nums.add(num)
+print(nums)
+
+# Apa Outputnya?
+
+# Variable dengan nilai string
+my_str = 'Python'
+"""
+Menggunakan operasi konkatenasi + untuk menggabungkan string dengan slicing string...
+[2::2] artinya dimulai dari indeks 2 hingga akhir dengan langkah atau loncat 2...
+
+"""
+results = my_str + my_str[2::2]
+print(results)
+
+# Apa Outputnya?
+
 # Mendefinisikan fungsi 'recurse' dengan dua parameter, 'n' dan 's'
 def recurse (n,s):
     # Kondisional, jika 'n' sama dengan 0
@@ -1393,3 +1476,130 @@ def is_palindrome(word):
 print(is_palindrome(['radar']))
 
 # Apa Outputnya?
+
+# Membuat list yang berisi elemen
+list_satu = [10,20,30,40]
+print(list_satu)
+
+# Apa Outputnya?
+
+# Membuat list yang berisi elemen
+list_dua = ['crunchy frog', 'ram bladder', 'lark vomit']
+print(list_dua)
+
+# Apa Outputnya?
+
+# membuat list yang berisi elemen
+list_nested = ['spam', 2.0, 5, [10,20]]
+print(list_nested)
+
+# Apa Outputnya?
+
+# membuat list dengan elemen
+list_str = ['Cheddar', 'Edam', 'Gouda']
+list_nums = [42, 123]
+# membuat list kosong
+list_empty = []
+print(list_str, list_nums, list_empty)
+
+# Apa Outputnya?
+
+# Membuat list yang berisi elemen
+list_str = ['cheddar', 'kiw-kiw']
+# Mengakses indeks ke 1 dari list_str dan menyimpan dalam variable resuluts
+results = list_str[1]
+print(results)
+
+# Membuat list, yang berisi elemen
+nums = [42, 123]
+# Mengubah nilai elemen ke 1 dari nums menjadi nilai 5
+nums[1] = 5
+print(nums)
+
+# Apa Outputnya?
+
+# Membuat tuple, yang berisi elemen
+my_tuple = (1, 2, 3, ['a', 'b'])
+"""
+Mengakses elemen ke 3 dari my_tuple..
+Mengakses elemen pertama dari list yang ada di dalam tuple...
+Mengganti nilai elemen tersebut dengan c
+
+"""
+my_tuple[3][0] = 'c'  
+print(my_tuple)
+
+# Apa Outputnya?
+
+def keju(item):
+    items = item
+    for item in items:
+        print(item)
+keju([1,2,3])
+
+def keju(nums):
+    for items in range(len(nums)):
+        nums[items] = nums[items] * 2
+    return nums
+print(keju([1,2,3]))
+
+def daftar(isi):
+    return len(isi)
+print(daftar(['spam', 1, ['Brie', 'Roquefort', 'Pol le Veq'], [1, 2, 3]]
+))
+
+# Apa Outputnya?
+
+nums1 = [1,2,3]
+nums2 = [4,5,6]
+results = nums1 + nums2
+print(results)
+
+# Apa Outputnya?
+
+nums = [0] * 4
+print(nums)
+
+# Apa Outpunya?
+
+nums = [1,2,3] * 3
+print(nums)
+
+# Apa Outputnya?
+
+list_slices = ['a', 'b', 'c', 'd', 'e', 'f']
+results = list_slices[1:3]
+print(results)
+
+# Apa Outputnya?
+
+list_slices = ['a', 'b', 'c', 'd', 'e', 'f']
+results = list_slices[:4]
+print(results)
+
+# Apa Outputnya?
+
+list_slices = ['a', 'b', 'c', 'd', 'e', 'f']
+results = list_slices[3:]
+print(results)
+
+# Apa outputnya?
+
+list_slices = ['a', 'b', 'c', 'd', 'e', 'f']
+results = list_slices[:]
+print(results)
+
+# Apa outputnya?
+
+
+list_slices = ['a', 'b', 'c', 'd', 'e', 'f']
+results[1:3] = ['x', 'y']
+print(results)
+
+# Apa outputnya
+
+list_slices = ['a', 'b', 'c', 'd', 'e', 'f']
+results = list_slices[0::2]
+print(results)
+
+# Apa outputnya?
