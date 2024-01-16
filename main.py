@@ -1603,3 +1603,57 @@ results = list_slices[0::2]
 print(results)
 
 # Apa outputnya?
+
+plus = []
+plus.append('a')
+print(plus)
+
+# Apa Outputnya?
+
+plus = []
+plu_plus = ['a','b','c']
+plus.extend(plu_plus)
+print(plus)
+
+# Apa Outputnya?
+
+plus = [2,1,4,3,6,5,8,7,9]
+plus.sort()
+print(plus)
+
+# Apa outputnya?
+
+def add_all(nums):
+    total = 0
+    for num in nums:
+        total +=  num
+    return total
+print(add_all([5]))
+
+# Apa outputnya?
+
+count = [1,2,3]
+counts = sum(count)
+print(counts)
+
+# Apa Outputnya?
+
+def capitalize_all(nums):
+    results = []
+    for num in nums:
+        results.append(num.capitalize()) # upper()
+    return results
+print(capitalize_all('zaki'))
+
+# Apa Outputnya?
+
+def only_uppers(nums):
+    results = []
+    for num in nums:
+        if num.isupper():
+            results.append(num)
+    return results
+print(only_uppers('Zaki'))
+
+# Apa Outputnya?
+
