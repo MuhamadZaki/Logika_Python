@@ -1518,7 +1518,7 @@ print(nums)
 
 # Apa Outputnya?
 
-# Membuat tuple, yang berisi elemen
+# Membuat tuple, yang berisi elemen dan list sebagai elemen keempat
 my_tuple = (1, 2, 3, ['a', 'b'])
 """
 Mengakses elemen ke 3 dari my_tuple..
@@ -1526,134 +1526,366 @@ Mengakses elemen pertama dari list yang ada di dalam tuple...
 Mengganti nilai elemen tersebut dengan c
 
 """
+# Mengubah elemen pertama dari elemen keempat tuple menjadi 'c'
 my_tuple[3][0] = 'c'  
 print(my_tuple)
 
 # Apa Outputnya?
 
+# Mendefinisikan fungsi keju yang menerima satu parameter bernama item
 def keju(item):
+    # Menggunakan variable lokal item untuk menyimpan nilai parameter yang diterima oleh fungsi
     items = item
+    # Itersi melalui setiap elemen dalam parameter item
     for item in items:
+        # Mencetan setiap elemen
         print(item)
+# Memanggil fungsi keju dengan sebuah list sebagai argumen
 keju([1,2,3])
 
+# Mendefinisikan fungsi keju yang menerima satu parameter bernama nums
 def keju(nums):
+    # Itersi melalui setiap indeks dalam range panjang dari nums
     for items in range(len(nums)):
+        # Menggandakan setiap elemen nums pada indeks tertentu
         nums[items] = nums[items] * 2
+    # Mengembalikan list yang sudah dimodifikasi
     return nums
+# Memenggil fungsi keju dengan sebuah list sebagai argumen dan mencetak hasilnya
 print(keju([1,2,3]))
 
+# Mendefinisikan fungsi bernama list yang menerima satu parameter bernama isi
 def daftar(isi):
+    # Mengembalikan panjang dari list yang diterima
     return len(isi)
+# Memanggil fungsi daftar dengan sebuah daftar sebagai argumen dan mencetak hasilnya.
 print(daftar(['spam', 1, ['Brie', 'Roquefort', 'Pol le Veq'], [1, 2, 3]]
 ))
 
 # Apa Outputnya?
 
+# Membuat sebuah list nums1 dengan tiga elemen
 nums1 = [1,2,3]
+# Membuat sebuah list nums2 dengan tiga elemen
 nums2 = [4,5,6]
+# Menggabungkan dua list nums1 dan nums2 menjadi sebuah list baru dan menyimpan dalam variable results
 results = nums1 + nums2
 print(results)
 
 # Apa Outputnya?
 
+# Membuat sebuah list nums yang terdiri dari empat elemen yang diulangi sebanyak 4 kali
 nums = [0] * 4
 print(nums)
 
 # Apa Outpunya?
 
+# Membuat sebuah list nums yang berisi tiga elemen yang diulangi sebanyak 3 kali
 nums = [1,2,3] * 3
 print(nums)
 
 # Apa Outputnya?
 
+# membuat sebuah list dengan enem elemen
 list_slices = ['a', 'b', 'c', 'd', 'e', 'f']
+# Mengambil irisan dari indeks 1 hingga 2 dan menyimpan dalam variable results
 results = list_slices[1:3]
 print(results)
 
 # Apa Outputnya?
 
+# Membuat sebuh list dengan enam elemen
 list_slices = ['a', 'b', 'c', 'd', 'e', 'f']
+# Mengambil irisan dari awal hingga indeks empat dan menyimpan dalam variale results
 results = list_slices[:4]
 print(results)
 
 # Apa Outputnya?
 
+# Membuat sebuh list dengan enam elemen
 list_slices = ['a', 'b', 'c', 'd', 'e', 'f']
+# Mengambil irisan dari indeks 3 hingga akhir dan menyimpan dalam variable results
 results = list_slices[3:]
 print(results)
 
 # Apa outputnya?
 
+# Membuat sebuh list dengan enam elemen
 list_slices = ['a', 'b', 'c', 'd', 'e', 'f']
+# Melakukan slicing pada list_slices dengan menggunakan seluruh rentang indeks...
+# sehingga membuat salinan (copy) dari seluruh isi list
 results = list_slices[:]
+# Ini akan mencetak list baru dengan elemen yang sama dengan list_slices
 print(results)
 
 # Apa outputnya?
 
-
+# Membuat sebuh list dengan enam elemen
 list_slices = ['a', 'b', 'c', 'd', 'e', 'f']
+# Mengganti elemen pada indeks 1 dan 2 (indeks 3 tidak termasuk) dari results dengan elemen 'x' dan 'y'
 results[1:3] = ['x', 'y']
+# Ini akan mencetak list baru dengan perubahan sesuai yang telah dijelaskan
 print(results)
 
 # Apa outputnya
 
+# Membuat sebuh list dengan enam elemen
 list_slices = ['a', 'b', 'c', 'd', 'e', 'f']
+# Melakukan slicing pada list_slices dimulai...
+# dari indeks 0 hingga akhir dengan langkah 2, sehingga menghasilkan elemen-elemen pada indeks genap
 results = list_slices[0::2]
+# Mencetak hasil slicing, yaitu elemen-elemen pada indeks genap dari list_slices
 print(results)
 
 # Apa outputnya?
 
+# Membuat sebuah list kosong dan menyimpannya dalam variabel plus
 plus = []
+# Menambahkan elemen 'a' ke list plus menggunakan method append()
 plus.append('a')
 print(plus)
 
 # Apa Outputnya?
 
+# Membuat sebuah list kosong dan menyimpannya dalam variabel plus
 plus = []
+ # Membuat list plu_plus dengan elemen 'a', 'b', dan 'c'
 plu_plus = ['a','b','c']
+# Menggabungkan (menambahkan semua elemen) dari list plu_plus ke dalam list plus menggunakan method extend()
 plus.extend(plu_plus)
 print(plus)
 
 # Apa Outputnya?
 
+# Membuat list plus dengan elemen yang tidak berurutan
 plus = [2,1,4,3,6,5,8,7,9]
+# Mengurutkan elemen-elemen dalam list plus secara ascending menggunakan method sort()
 plus.sort()
 print(plus)
 
 # Apa outputnya?
 
+# Mendefinisikan fungsi bernama add_all yang menerima satu parameter, yaitu nums
 def add_all(nums):
+    # Mendeklarasikan variabel total dan menginisialisasinya dengan nilai 0
     total = 0
+    # Melakukan iterasi melalui setiap elemen dalam nums
     for num in nums:
+        # Menambahkan nilai setiap elemen ke variabel total
         total +=  num
+        # Mengembalikan nilai total setelah iterasi selesai
     return total
 print(add_all([5]))
 
 # Apa outputnya?
 
+# Membuat list count dengan elemen 1, 2, dan 3
 count = [1,2,3]
+# Menghitung jumlah (penjumlahan) seluruh elemen dalam list count menggunakan fungsi sum()
 counts = sum(count)
 print(counts)
 
 # Apa Outputnya?
 
+# Mendefinisikan fungsi bernama capitalize_all yang menerima satu parameter, yaitu nums
 def capitalize_all(nums):
+     # Membuat list kosong yang akan menyimpan hasil operasi capitalize
     results = []
+    # Melakukan iterasi melalui setiap karakter dalam nums
     for num in nums:
+        # Mengubah setiap karakter menjadi...
+        # huruf kapital menggunakan method capitalize() dan menambahkannya ke dalam list results
         results.append(num.capitalize()) # upper()
+    # Mengembalikan list results yang berisi karakter-karakter dari nums yang telah diubah menjadi huruf kapital
     return results
 print(capitalize_all('zaki'))
 
 # Apa Outputnya?
 
+# Mendefinisikan fungsi bernama only_uppers yang menerima satu parameter, yaitu nums
 def only_uppers(nums):
+    # Membuat list kosong yang akan menyimpan karakter-karakter yang merupakan huruf kapital
     results = []
+    # Melakukan iterasi melalui setiap karakter dalam nums
     for num in nums:
+        # Memeriksa apakah karakter tersebut adalah huruf kapital
         if num.isupper():
+            # Jika ya, maka karakter tersebut ditambahkan ke dalam list results
             results.append(num)
+    # Mengembalikan list results yang berisi karakter-karakter dari nums yang merupakan huruf kapital
     return results
 print(only_uppers('Zaki'))
 
 # Apa Outputnya?
 
+# Membuat sebuah list dengan tiga elemen
+hapus = ['a', 'b', 'c']
+# Menghapus elemen indeks 0 dari list
+results = hapus.pop(0)
+print(results)
+
+# Apa Outputnya?
+
+# Membuat sebuah list dengan tiga elemen
+hapus = ['a', 'b', 'c']
+# Menghapus elemen indeks dua dari list
+hapus.pop(2)
+print(hapus)
+
+# Apa Outputnya?
+
+# Membuat sebuah list dengan tiga elemen
+hapus = ['a', 'b', 'c']
+# Menghapus elemen indeks 1 dari list
+del hapus[1]
+print(hapus)
+
+# Apa Outputnya?
+
+# membuat sebuah list dengan enam elemen
+hapus = ['a', 'b', 'c','d','e','f']
+# Menghapus elemen dari indeks 1 hingga 4 dari list
+del hapus[1:5]
+print(hapus)
+
+# Apa Outputnya?
+
+# Membuat sebuah list dengan tiga elemen
+hapus = ['a', 'b', 'c']
+# Menghapus elemen atau 'a' dari list
+hapus.remove('a')
+print(hapus)
+
+# Apa outputnya?
+
+# String yang akan diubah menjadi list, dengan setiap karakter menjadi elemen dari list
+karakters = 'spam'
+# Mengonversi string 'karakter' menjadi list dengan setiap karakter sebagai elemen dari list
+results = list(karakters)
+print(results)
+
+# Apa Outputnya?
+
+# String yang akan dipisahkan, jika no ada argumen yang diberikan ke split(), string akan dipisahkan...
+# berdasarkan spasi atau (karakter whitespace lainnya)
+karakters = 'pining for the jords'
+# Memsisahkan string 'karakter' berdasarkan spasi (karakter whitespace) dan menyimpan hasilnya dalam bentuk list
+results = karakters.split()
+print(results)
+
+# Apa Outputnya?
+
+# String yang akan dipisahkan berdasarkan pemisah yang telah ditentukan
+karakters = 'spam-spam-spam'
+# String yang akan digunakan sebagai pemisah untuk memisahkan potongan-potongan string
+pembatas = '-'
+# Memisahkan string 'karakter' berdasarkan 'pembatas' dan menyimpan hasilnya dalam bentuk list
+results = karakters.split(pembatas)
+print(results)
+
+# Apa Outputnya?
+
+# Menyimpan string yang akan dipecah menjadi potongan-potongan
+karakters = 'pining for the jords'
+# Menyimpan string yang akan digunakan sebagai pembatas antara potongan-potongan
+pembatas = ' '
+# Menggabungkan  potongan-potongan string menggunakan pembatas yang telah ditentukan
+results = pembatas.join(karakters)
+print(results)
+
+# Apa Outputnya?
+
+"""
+Di Python saat Anda menggunakan == operator, Anda menguji identitas objek berdasarkan nilainya.
+Saat Anda menggunakan is operator, Anda sedang menguji identitas objek.
+
+Jadi secara konseptual, value objectsdigunakan seolah-olah mereka adalah nilai...
+namun secara teknis mereka masih berupa objek dan ada baiknya mengingat perbedaan tersebut.
+"""
+# Variable a dan b yang berisi nilai string
+a = 'bananas'
+b = 'bananas'
+# Apakah kedua variable merujuk objek yang sama? Aku sarankan gunakan operator ==
+c = a is b
+print(c)
+
+# Apa Outputnya?
+
+# Variable a dengan nilai list yang berisi elemen
+a = [1,2,3]
+a = [1,2,3]
+# Apakah variable merujuk objek yang sama
+c = a is a
+print(c)
+
+# Apa Outputnya?
+
+
+def delete_head(t):
+    # Menghapus elemen pertama dari list
+    del t[0]
+# Insisialisasi list(elemen)
+letters = ['a','b','c']
+# Memanggil fungsi
+delete_head(letters)
+print(letters)
+
+# Apa Outputnya?
+
+# Membuat sebuah list dengan dua elemen, yang disipan di variable nums
+nums = [1,2]
+# Menambahkan satu elemen 3 ke list nums, menggunakan metode append() dan disimpan dalam variable results
+results = nums.append(3)
+# Metode append() dalam list tidak mengembalikan nilai yang dapat disimpan, sehingga hasilnya None
+print(results)
+
+# Apa Outputnya?
+
+# Membuat sebuah list dengan dua elemen, yang disimpan di variable nums
+nums = [1,2]
+# Menambahkan elemen 3 ke list nums, menggunakan metode append() dan disimpan dalam variable results
+results = nums.append(3)
+# perubahan pada list, maka list nums akan mencangkup tiga elemen 1,2,3
+print(nums)
+
+# Apa Outputnya?
+
+# membuat sebuah listt dengan 2 elemen dan disimpan pada variable nums
+nums = [1,2]
+# Menambahkan elemen 3 ke list nums menggunakan operator + dan hasilnya disimpan pada variable results
+results = nums + [3]
+# Menghasilkan list baru dengan tiga elemen, dan list asli (belum dimodifikasi) tidak berubah.
+print(results)
+
+# Apa Outputnya?
+
+# Mendefinisikan sebuah fungsi yang menerima satu parameter
+def bad_delete_head(nums):
+    # Menghapus elemen partama dari list nums dan menetapkan hasilnya kembali ke variable nums...
+    # (tetapi tidak mengubah list asli yang dilewati sebagai argumen)
+    nums = nums[1:]
+    # Membuat list baru yang disimpan pada variable num dengan empat elemen
+    num = [1,2,3,4]
+    # Mencetak isi list nums setelah penghapusan elemen pertama
+    print(nums)
+    # Mencetak isi dari list num
+    print(num)
+# Penggunaan fungsi dengan argumen
+bad_delete_head([1,2,3])
+
+# Apa Outputnya?
+
+# Mendefinisikan sebuah fungsi yang bernama tail, mengembalikan list nums tanpa elemen pertamanya
+def tail(nums):
+    # Mengembalikan potongan list nums mulai dari indeks 1 hingga akhir...
+    # yang menghasilkan list baru tanpa elemen pertama
+    return nums[1:]
+# Membuat list letters yang berisi tiga elemen (huruf)
+letters = ['a','b','c']
+# Memanggil fungsi tail dengan list letters sebagai argumen, dan hasilnya disimpan dalam variabel rests
+rests = tail(letters)
+# Mencetak nilai yang dikembalikan oleh fungsi tail...
+# yaitu potongan list letters mulai dari indeks 1, sehingga mencetak list baru tanpa huruf 'a'
+print(rests)
+
+# Apa Outputnya?
