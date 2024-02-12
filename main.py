@@ -1889,3 +1889,88 @@ rests = tail(letters)
 print(rests)
 
 # Apa Outputnya?
+
+# Mendefinisikan fungsi nums yang menerima satu parameter yaitu x
+def nums(x):
+    # Membuat list kosong yang akan menyimpan hasil
+    t = []
+    # Menambahkan semua elemen dari list x ke dalam list t menggunakan operator
+    t += x
+    # Mengembalikan list t yang sudah di isi dari elemen list x
+    return t
+# Penggunaan fungsi
+print(nums([1,2,3]))
+
+# Apa outputnya?
+
+# Mendefinisikan fungsi nums yang menerima satu parameter yaitu x
+def nums(x):
+    # Membuat list kosong yang akan menyimpan hasil
+    t = []
+    # Menambahkan elemen x kedalam list t menggunakan metode append()
+    t.append(x)
+    # Mengembalikan list t yang telah di isi list x
+    return t
+print(nums([1,2,3]))
+
+# Apa Outputnya?
+
+# Mendefinisikan fungsi nums dengan satu parameter, yang dibuat defaultnya False
+def nums(asli=False):
+    # Mendfinisikan list asli dengan nilai default jika tidak diberikan argumen
+    asli= [6,3,1,5,2,4]
+    # Membuat salinan dari list asli untuk diurutkan nanti tanpa mempengaruhi list asli
+    hasil_asli= asli[:]
+    # Mengurutkan list haisl_asli secara ascending
+    hasil_asli.sort()
+    # Mencetak hasil yang telah diurutkan
+    print(hasil_asli)
+# Pneggunaan fungsi tanpa argumen
+nums()
+
+# Apa Outputnya?
+
+# Mendefinisikan fungsi nested_sums dengan satu parameter services yang merupakan list...
+# berisi list (nested list) dari angka
+def nested_sums(services):
+    # Inisialisasi list kosong results untuk menyimpan angka-angka yang memenuhi kondisi
+    results = []
+    # Inisialisasi variabel totals untuk menghitung total dari semua angka di dalam nested list
+    totals = 0
+    # Melakukan iterasi melalui setiap elemen di dalam list services
+    for service in services:
+        # Melakukan iterasi melalui setiap elemen di dalam nested list yang sedang diiterasi
+        for subs in service:
+            # Memeriksa apakah elemen tersebut merupakan bilangan genap
+            if subs % 2 == 0:
+                # Jika iya, tambahkan elemen tersebut ke dalam list results
+                results.append(subs)
+            # Menambahkan nilai elemen ke dalam total
+            totals += subs
+    # Mengembalikan list results dan total
+    return results, totals
+# Memanggil fungsi nested_sums dengan parameter sebuah nested list. Kemudian mencetak hasilnya
+print(nested_sums([[1,2],[3],[4,5,6]]))
+
+# Apa Outputnya?
+
+def list_bersarangs(sums):
+    results = []
+    totals = 0
+    for sum in sums:
+        for subs in sum:
+            if subs % 2 == 0:
+                results.append(subs)
+            totals += subs
+    return results, totals
+print(list_bersarangs([[1,2],[3],[4,5,6]]))
+
+def sum_sum(services):
+    results = []
+    totals = 0
+    for service in range(0, len(services)):
+        totals += services[service]
+        results.append(totals)
+    return results
+print(sum_sum([1,2,3]))
+
