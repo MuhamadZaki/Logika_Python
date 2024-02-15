@@ -1999,12 +1999,24 @@ print(cohop([1, 2, 3, 4]))
 
 # Apa Outputnya?
 
+# Mendefinisikan fungsi is_sorted dengan satu parameter, yaitu services (list)
 def is_sorted(services):
-    service= sorted(services)
+    # Mengurutkan list services dan menyimpannya dalam variabel service
+    service = sorted(services)
+    
+    # Memeriksa apakah list asli sama dengan list yang telah diurutkan
     if services == service:
+        # Jika kedua list sama, mengembalikan True
         return True
     else:
+        # Jika kedua list tidak sama, mengembalikan False
         return False
-new1 = [1,2,2]
-#new2 = ['b','a']
+
+# Contoh penggunaan fungsi
+new1 = [1, 2, 2]
+# new2 = ['b', 'a'] # Baris ini dikomentari karena tidak digunakan
+
+# Memanggil fungsi is_sorted dengan list new1 sebagai argumen dan mencetak hasilnya
 print(is_sorted(new1))
+
+# Apa Outputnya?
