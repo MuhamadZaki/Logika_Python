@@ -1998,3 +1998,13 @@ def cohop(services):
 print(cohop([1, 2, 3, 4])) 
 
 # Apa Outputnya?
+
+def is_sorted(services):
+    service= sorted(services)
+    if services == service:
+        return True
+    else:
+        return False
+new1 = [1,2,2]
+#new2 = ['b','a']
+print(is_sorted(new1))
