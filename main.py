@@ -1970,6 +1970,7 @@ def cumsum(services):
 
 print(cumsum([1, 2, 3]))  # Memanggil fungsi cumsum dengan list [1, 2, 3] sebagai argumen
 
+# Apa Outputnya?
 
 def middle(services):
     # Inisialisasi list kosong untuk menyimpan hasil
@@ -1985,6 +1986,7 @@ def middle(services):
 # Memanggil fungsi middle dengan list [1, 2, 3, 4] sebagai argumen 
 print(middle([1, 2, 3, 4]))  
 
+# Apa Outputnya?
 
 def cohop(services):
     # Menggunakan range untuk menghapus setiap elemen ketiga
@@ -1993,3 +1995,5 @@ def cohop(services):
 
 # Memanggil fungsi dan mencetak hasilnya
 print(cohop([1, 2, 3, 4]))
+
+# Apa Outputnya?
