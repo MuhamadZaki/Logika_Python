@@ -1989,11 +1989,12 @@ print(middle([1, 2, 3, 4]))
 # Apa Outputnya?
 
 def cohop(services):
-    # Menggunakan range untuk menghapus setiap elemen ketiga
+    # Menghapus setiap elemen ketiga dari list services menggunakan slicing
     del services[0::3]
-    return services  # Mengembalikan list yang sudah dimodifikasi
+    # Mengembalikan list services yang sudah dimodifikasi
+    return services  
 
-# Memanggil fungsi dan mencetak hasilnya
-print(cohop([1, 2, 3, 4]))
+# Memanggil fungsi cohop dengan list [1, 2, 3, 4] sebagai argumen
+print(cohop([1, 2, 3, 4])) 
 
 # Apa Outputnya?
