@@ -1954,23 +1954,42 @@ print(nested_sums([[1,2],[3],[4,5,6]]))
 
 # Apa Outputnya?
 
-def list_bersarangs(sums):
+def cumsum(services):
+    # Inisialisasi list kosong untuk menyimpan hasil penjumlahan kumulatif
     results = []
-    totals = 0
-    for sum in sums:
-        for subs in sum:
-            if subs % 2 == 0:
-                results.append(subs)
-            totals += subs
-    return results, totals
-print(list_bersarangs([[1,2],[3],[4,5,6]]))
+    # Inisialisasi variabel totals untuk menyimpan total kumulatif sementara 
+    totals = 0 
+    # Melakukan iterasi dari 0 hingga panjang services - 1 
+    for service in range(0, len(services)):  
+        # Menambahkan nilai service saat ini ke totals
+        totals += services[service]  
+        # Menambahkan total kumulatif saat ini ke dalam list results
+        results.append(totals)  
+    # Mengembalikan list hasil penjumlahan kumulatif
+    return results  
 
-def sum_sum(services):
-    results = []
-    totals = 0
-    for service in range(0, len(services)):
-        totals += services[service]
-        results.append(totals)
-    return results
-print(sum_sum([1,2,3]))
+print(cumsum([1, 2, 3]))  # Memanggil fungsi cumsum dengan list [1, 2, 3] sebagai argumen
 
+
+def middle(services):
+    # Inisialisasi list kosong untuk menyimpan hasil
+    results = [] 
+    # Melakukan iterasi pada setiap elemen dalam list services 
+    for service in services:
+        # Mengambil potongan dari indeks 1 hingga 2 dari list services  
+        service = services[1:3]
+        # Menambahkan potongan ke list results  
+        results.append(service) 
+        # Mengembalikan hasil setelah menambahkan potongan pertama, kemudian keluar dari fungsi 
+        return results 
+# Memanggil fungsi middle dengan list [1, 2, 3, 4] sebagai argumen 
+print(middle([1, 2, 3, 4]))  
+
+
+def cohop(services):
+    # Menggunakan range untuk menghapus setiap elemen ketiga
+    del services[0::3]
+    return services  # Mengembalikan list yang sudah dimodifikasi
+
+# Memanggil fungsi dan mencetak hasilnya
+print(cohop([1, 2, 3, 4]))
