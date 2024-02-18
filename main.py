@@ -1988,19 +1988,19 @@ print(middle([1, 2, 3, 4]))
 
 # Apa Outputnya?
 
-def cohop(services):
+def cohops(services):
     # Menghapus setiap elemen ketiga dari list services menggunakan slicing
     del services[0::3]
     # Mengembalikan list services yang sudah dimodifikasi
     return services  
 
 # Memanggil fungsi cohop dengan list [1, 2, 3, 4] sebagai argumen
-print(cohop([1, 2, 3, 4])) 
+print(cohops([1, 2, 3, 4])) 
 
 # Apa Outputnya?
 
 # Mendefinisikan fungsi is_sorted dengan satu parameter, yaitu services (list)
-def is_sorted(services):
+def is_sorteds(services):
     # Mengurutkan list services dan menyimpannya dalam variabel service
     service = sorted(services)
     
@@ -2017,6 +2017,81 @@ new1 = [1, 2, 2]
 # new2 = ['b', 'a'] # Baris ini dikomentari karena tidak digunakan
 
 # Memanggil fungsi is_sorted dengan list new1 sebagai argumen dan mencetak hasilnya
-print(is_sorted(new1))
+print(is_sorteds(new1))
 
 # Apa Outputnya?
+
+# Mendefinisikan fungsi untuk mengecek apakah dua kata adalah anagram
+def is_angarams(permainan, kata):  
+    # Mengurutkan huruf-huruf dalam kata permainan
+    word = sorted(permainan) 
+    # Mengurutkan huruf-huruf dalam kata
+    words = sorted(kata)  
+    # Membandingkan kata yang sudah diurutkan. Jika sama, maka kata-kata tersebut adalah anagram
+    if word == words:  
+        # Jika kata-kata adalah anagram, mencetak True
+        print('True') 
+    else:
+        # Jika kata-kata bukan anagram, mencetak False
+        print(False)  
+# Memanggil fungsi is_angaram dengan kata-kata yang diberikan sebagai argumen
+is_angarams('mycar','camry')  
+
+# Apa Outptnya?
+
+# Mendefinisikan fungsi untuk mengecek apakah dua kata adalah anagram
+def is_anagrams(kata_satu, kata_dua):  
+
+    # Mengubah kedua kata menjadi huruf kecil untuk memastikan pengecekan yang tidak peka terhadap huruf besar-kecil
+    satu = kata_satu.lower()
+    dua = kata_dua.lower()
+
+    # Menghilangkan spasi di sekitar kata, jika ada, atau bisa menggunakan replace(" ", " ")
+    tiga = satu.strip()
+    empat = dua.strip()
+
+    # Mengurutkan huruf-huruf dalam kata-kata untuk mempermudah perbandingan
+    kata_sorted_satu = sorted(tiga)
+    kata_sorted_dua = sorted(empat)
+
+    # Membandingkan kedua kata yang sudah diurutkan. Jika sama, maka kata-kata tersebut adalah anagram
+    if kata_sorted_satu == kata_sorted_dua:
+        return True
+    else:
+        return False
+# Memanggil fungsi is_anagrams dengan kata-kata yang diberikan sebagai argumen
+print(is_anagrams('camry','mycar'))  
+
+# Apa Outputnya?
+
+def has_dulicates(lisa):
+    # Buat elemen dari list untuk memmastikan list asli tidak dirubah
+    copy_lisa = lisa[:]
+    # Buat sebuah set untuk menyimpan elemen yang telah ditemui
+    sets = set()
+    # Melakukan iterasi melalui setiap elemen dalam list
+    for elemen in copy_lisa:
+        # Jika elemen sudah ada dalam set, berarti ada duplikat
+        if elemen in sets:
+            return True
+        # Tambah elemen ke set
+        sets.add(elemen)
+    return False
+print(has_dulicates([1,2,3,4,1])) # [1,2,3,4,5,6]
+
+# Mengimpor modul random untuk menghasilkan angka acak
+import random
+# Mendefinisikan fungsi dengan satu parameter
+def random_britdays(days): 
+    # Inisialisasi list kosong untuk menyimpan dari britdays
+    results = []
+    # Melakukan iterasi sebanyak jumlah dari yang diminta
+    for day in range(days):
+        # Menghasilkan angka acak antara 1 dan 365(representasi hari dalam setahun)
+        britdays = random.randint(1, 365)
+        # Menambahkan britdays ke list
+        results.append(britdays)
+    # Mengembalikan list yang berisi britdays
+    return results
+# Penggunaan fungsi kiw-kiw
+print(random_britdays(23))
