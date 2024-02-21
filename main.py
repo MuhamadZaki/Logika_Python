@@ -2122,25 +2122,22 @@ def reads(file):
         return f"{no} terjadi kesahalah!"
 print(reads('tiga.txt'))
 
-def read_words(files):
+def finds(file):
     try:
-        with open(files, 'r', encoding='utf-8') as file:
-            file_names = set()
-            for line in file:
+        with open(file, 'r', encoding='utf-8') as files:
+            format_txts = set()
+            for line in files:
                 lines = line.casefold().strip().split()
-                file_names.update(lines)
-            return file_names
+                format_txts.update(lines)
+            return format_txts
+    except Exception:
+        return "Invalid!"
 
-    except FileNotFoundError:
-        return f"{files}, tidak ditemukan!"
-    except Exception as no:
-        return f"{no}, Terjadi kesalahan!"
+txts = "empat.txt"
+uniques = finds(txts)
 
-words = 'empat.txt'
-uniq_words = read_words(words)
-
-targeteds = 'salak'
-if  targeteds in uniq_words:
-    print(f"{targeteds}, ditemukan!")
+targets = 'pepaya'
+if targets in uniques:
+    print(f"{targets}, ditemukan!")
 else:
-    print(f"{targeteds}, tidak ditemukan!")
+    print(f"{targets}, tidak ditemukan!")
