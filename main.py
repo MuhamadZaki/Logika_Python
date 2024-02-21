@@ -2095,3 +2095,52 @@ def random_britdays(days):
     return results
 # Penggunaan fungsi kiw-kiw
 print(random_britdays(23))
+
+
+
+def reads(file):
+    try:
+        with open(file,'r', encoding='utf-8') as files:
+            file_names =[]
+            for line in files:
+                lines = line.strip().split()
+                file_names += lines
+            return file_names
+    except Exception as no:
+        return f"{no} terjadi kesahalah!"
+print(reads('tiga.txt'))
+
+def reads(file):
+    try:
+        with open(file,'r', encoding='utf-8') as files:
+            file_names =[]
+            for line in files:
+                lines = line.strip().split()
+                file_names.append(lines)
+            return file_names
+    except Exception as no:
+        return f"{no} terjadi kesahalah!"
+print(reads('tiga.txt'))
+
+def read_words(files):
+    try:
+        with open(files, 'r', encoding='utf-8') as file:
+            file_names = set()
+            for line in file:
+                lines = line.casefold().strip().split()
+                file_names.update(lines)
+            return file_names
+
+    except FileNotFoundError:
+        return f"{files}, tidak ditemukan!"
+    except Exception as no:
+        return f"{no}, Terjadi kesalahan!"
+
+words = 'empat.txt'
+uniq_words = read_words(words)
+
+targeteds = 'salak'
+if  targeteds in uniq_words:
+    print(f"{targeteds}, ditemukan!")
+else:
+    print(f"{targeteds}, tidak ditemukan!")
