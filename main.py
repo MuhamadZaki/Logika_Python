@@ -2100,44 +2100,73 @@ print(random_britdays(23))
 
 def reads(file):
     try:
+        # Membuka file dengan mode baca ('r') dan menggunakan encoding utf-8
         with open(file,'r', encoding='utf-8') as files:
+            # Inisialisasi list kosong untuk menyimpan nama file
             file_names =[]
+            # iterasi, melalui (membaca) setiap baris dalam file, satu persatu
             for line in files:
+                # Membersihkan setiap baris dari spasi tambahan di awal dan akhir(whitespace),
+                # kemudian membagi baris menjadi list kata-kata
                 lines = line.strip().split()
+                # Menambahkan semua kata dari baris saat ini ke dalam list file_names
                 file_names += lines
+            # Mengembalikan list yang berisi semua nama file yang berhasil dibaca dari file
             return file_names
     except Exception as no:
+        # Mengembalikan pesan kesalahan jika terjadi kesalahan saat membaca file
         return f"{no} terjadi kesahalah!"
+# Penggunaan fungsi
 print(reads('tiga.txt'))
 
 def reads(file):
     try:
+        # Membuka file dengan mode baca ('r') dan menggunakan encoding utf-8
         with open(file,'r', encoding='utf-8') as files:
+            # Inisialisasi list untuk menyimpan nama file
             file_names =[]
+            # Iterasi melalui setiap baris dalam file
             for line in files:
+                # Menghapus spasi tambahan di awal dan akhir baris,
+                # kemudian membagi baris menjadi list kata-kata
                 lines = line.strip().split()
+                # Menambahkan list kata-kata dari baris saat ini ke dalam list file_names
                 file_names.append(lines)
+            # Mengembalikan list yang berisi list kata-kata dari setiap baris dalam file
             return file_names
+    # Mengembalikan pesan kesalahan jika terjadi kesalahan saat membaca file
     except Exception as no:
         return f"{no} terjadi kesahalah!"
+# Penggunaan fungsi 
 print(reads('tiga.txt'))
 
 def finds(file):
     try:
+        # Membuka file dengan mode baca ('r') dan menggunakan encoding utf-8
         with open(file, 'r', encoding='utf-8') as files:
-            format_txts = set()
+            format_txts = set()  # Membuat set kosong untuk menyimpan kata-kata unik
+            
+            # Iterasi melalui setiap baris dalam file
             for line in files:
-                lines = line.casefold().strip().split()
-                format_txts.update(lines)
+                # Mengubah setiap baris menjadi lowercase, membersihkan dari spasi tambahan di awal dan akhir, 
+                # lalu membagi baris menjadi list kata-kata
+                words = line.casefold().strip().split()
+                
+                # Menambahkan semua kata dari baris saat ini ke dalam set format_txts
+                format_txts.update(words)
+            
+            # Mengembalikan set yang berisi semua kata unik yang ada dalam file
             return format_txts
+            
     except Exception:
+        # Mengembalikan pesan "Invalid!" jika terjadi kesalahan saat membuka atau membaca file
         return "Invalid!"
 
 txts = "empat.txt"
-uniques = finds(txts)
+uniques = finds(txts)  # Memanggil fungsi finds untuk mencari kata-kata unik dalam file "empat.txt"
 
-targets = 'pepaya'
+targets = 'Anggur'
 if targets in uniques:
-    print(f"{targets}, ditemukan!")
+    print(f"{targets}, ditemukan!")  # Cetak pesan jika target ditemukan dalam set uniques
 else:
-    print(f"{targets}, tidak ditemukan!")
+    print(f"{targets}, tidak ditemukan!")  # Cetak pesan jika target tidak ditemukan dalam set uniques
