@@ -2200,3 +2200,50 @@ if reverse_is_pairs:
         print(fives[0], "_", fives[1])  
 else:
     print("Pasangan terbalik tidak ditemukan!")
+
+
+
+def are_linked(word1, word2):
+
+    #Fungsi ini memeriksa apakah dua kata saling bertautan
+
+    if len(word1) != len(word2):
+        # Jika panjang kata tidak sama, tidak mungkin saling bertautan
+        return False  
+    # Inisialisasi string kosong untuk menyimpan hasil penggabungan huruf
+    linked_word = ""  
+    for char1, char2 in zip(word1, word2):
+        # Menggabungkan huruf bergantian dari kedua kata
+        linked_word += char1 + char2  
+    return linked_word
+
+
+def find_linked_pairs(words):
+    
+    # Fungsi ini menemukan semua pasangan kata yang saling bertautan dalam daftar kata
+    
+    # Inisialisasi list untuk menyimpan pasangan kata yang saling bertautan
+    linked_pairs = []  
+    for i in range(len(words)):
+        for j in range(i+1, len(words)):
+            # Memeriksa apakah dua kata saling bertautan
+            linked_word = are_linked(words[i], words[j])  
+            if linked_word:
+                # Menambahkan pasangan kata yang saling bertautan ke dalam list
+                linked_pairs.append((words[i], words[j], linked_word))  
+    return linked_pairs
+
+# Daftar kata yang akan diperiksa
+words_list = ["sepatu", "dingin", "bersekolah", "jalan", "pulang", "dipakai"]
+
+# Mencari pasangan kata yang saling bertautan dalam daftar kata
+linked_pairs = find_linked_pairs(words_list)
+
+# Cetak pasangan kata yang saling bertautan
+if linked_pairs:
+    print("Pasangan kata yang saling bertautan:")
+    for pair in linked_pairs:
+        # Cetak pasangan kata yang saling bertautan beserta kata yang dihasilkan
+        print(f"{pair[0]} dan {pair[1]} membentuk: {pair[2]}")  
+else:
+    print("Tidak ada pasangan kata yang saling bertautan dalam daftar.")
