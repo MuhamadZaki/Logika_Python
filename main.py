@@ -2144,7 +2144,8 @@ def finds(file):
     try:
         # Membuka file dengan mode baca ('r') dan menggunakan encoding utf-8
         with open(file, 'r', encoding='utf-8') as files:
-            format_txts = set()  # Membuat set kosong untuk menyimpan kata-kata unik
+            # Membuat set kosong untuk menyimpan kata-kata unik
+            format_txts = set()  
             
             # Iterasi melalui setiap baris dalam file
             for line in files:
@@ -2165,8 +2166,37 @@ def finds(file):
 txts = "empat.txt"
 uniques = finds(txts)  # Memanggil fungsi finds untuk mencari kata-kata unik dalam file "empat.txt"
 
-targets = 'Anggur'
+targets = 'anggur'
 if targets in uniques:
     print(f"{targets}, ditemukan!")  # Cetak pesan jika target ditemukan dalam set uniques
 else:
     print(f"{targets}, tidak ditemukan!")  # Cetak pesan jika target tidak ditemukan dalam set uniques
+
+
+# Fungsi ini memeriksa apakah dua kata merupakan pasangan terbalik dengan membandingkan apakah kata pertama adalah kebalikan dari kata kedua
+def is_reverse_pair(one, two):
+    return one[::-1] == two
+
+def find_reverse_pair(trea):
+    # Inisialisasi list untuk menyimpan pasangan kewalik
+    reverse_pairs = []  
+    for tres in range(len(trea)):
+        # Gunakan tres + 1 untuk memastikan tidak ada pasangan yang sama
+        for fours in range(tres + 1, len(trea)):  
+            # Memeriksa apakah pasangan kata terbalik
+            if is_reverse_pair(trea[tres], trea[fours]): 
+                # Menambahkan pasangan terbalik ke dalam list 
+                reverse_pairs.append((trea[tres], trea[fours]))  
+    return reverse_pairs
+
+tre_lists = ["radar", "malam", "rotor", "malam"]
+# Memanggil fungsi untuk menemukan pasangan terbalik
+reverse_is_pairs = find_reverse_pair(tre_lists)  
+
+if reverse_is_pairs:
+    print("Pasangan terbalik ditemukan: ")
+    for fives in reverse_is_pairs:
+        # Mencetak setiap pasangan kewalik
+        print(fives[0], "_", fives[1])  
+else:
+    print("Pasangan terbalik tidak ditemukan!")
