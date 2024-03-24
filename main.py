@@ -2336,6 +2336,7 @@ def histogram(s):
     return results
 print(histogram({'satu':'gajah', 'dua':'gajah', 'tiga':'cat'}))
 
+""""""
 def hitogram(a):
     hasil = dict()
     for v in a.values():
@@ -2356,5 +2357,5 @@ def histogram(mas):
 def modifikasi(unyu):
     for c, hit in unyu.items(): # sorted(unyu.items())
         print(c, hit)
-unyu = histogram('parrot')
+unyu = histogram('mamasunyu')
 modifikasi(unyu)
