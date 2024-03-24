@@ -2319,42 +2319,6 @@ if 'uno' in results:
 else:
     print(False)
 
-# Fungsi histrogram, parameter s(iterbel(dict))
-def histogram(s):
-    # Inisialisasi d dengan dic kosong, untuk menyimpan hasil
-    d = {}
-    # Iterasi item atau key c dalam itrabel s(dict/item/key)
-    for c in s:
-        # kondisi c(key) belum ada di dalam d
-        if c not in d:
-            # Menetampkan c sebagai key dalam d, dengan value 1 (telah ditemukan satu kali)
-            d[c] = 1
-            
-        else:
-            # Value yang terkait dengan c di dalam d, ditingkatkan 1 (utk mencerminkan frkuensi +)
-            d[c] +=1
-    return d
-print(histogram({'one':'uno', 'two':'dos', 'three':'tres'}))
-
-# Fungsi histrogram, parameter s(iterbel(dict))
-def histogram(s):
-    # Inisialisasi d dengan dic kosong, untuk menyimpan hasil
-    d = dict()
-    # Iterasi item atau key c dalam itrabel s(dict/item/key)
-    for c in s:
-        # kondisi c(key) belum ada di dalam d
-        if c not in d:
-            # Menetampkan c sebagai key dalam d, dengan value 1 (telah ditemukan satu kali)
-            d[c] = 1
-            
-        else:
-            # Value yang terkait dengan c di dalam d, ditingkatkan 1 (utk mencerminkan frkuensi +)
-            d[c] +=1
-    return d
-print(histogram('onetwothree'))
-
-
-
 
 """
 Buatkan dengan fungsi histogram utk menghitung frekuensi..
