@@ -2247,3 +2247,150 @@ if linked_pairs:
         print(f"{pair[0]} dan {pair[1]} membentuk: {pair[2]}")  
 else:
     print("Tidak ada pasangan kata yang saling bertautan dalam daftar.")
+
+
+
+# Fungsi untuk menemukan kata-kata yang saling bertautan tiga arah
+def find_triple_linked_words(words):
+    # Inisialisasi daftar kosong untuk menyimpan kata-kata yang ditemukan
+    result = []  
+
+    # Membuat set kata untuk pencarian yang lebih efisien
+    word_set = set(words)
+
+    # Iterasi melalui setiap kata dalam daftar kata yang diberikan
+    for word1 in words:
+        # Iterasi melalui setiap indeks dalam panjang kata saat ini
+        for i in range(len(word1)):
+            # Iterasi melalui setiap kata dalam daftar kata yang diberikan
+            for word2 in words:
+                # Memeriksa apakah kata kedua tidak sama dengan kata pertama dan panjangnya lebih besar dari indeks
+                if word2 != word1 and len(word2) > i:
+                    # Membuat kata baru dengan menggabungkan bagian-bagian dari kata pertama dan kedua
+                    new_word = word1[:i] + word2[i] + word1[i+1:]
+                    # Memeriksa apakah kata baru ada di dalam set kata
+                    if new_word in word_set:
+                        # Jika ya, tambahkan triple kata yang saling bertautan ke dalam daftar hasil
+                        result.append((word1, word2, new_word))
+
+    # Mengembalikan daftar kata-kata yang saling bertautan tiga arah
+    return result
+
+# Daftar kata yang diberikan
+words = ["cat", "act", "dog", "god", "mat"]
+# Memanggil fungsi untuk menemukan kata-kata yang saling bertautan tiga arah
+triple_linked_words = find_triple_linked_words(words)
+# Mencetak hasilnya
+print(triple_linked_words)
+
+# Dictionary kosong built-in
+eng2sp = dict()
+print(eng2sp)
+
+# Dictionary dengan key dan value
+eng2sp['one']= 'uno'
+print(eng2sp)
+
+# Dictionary dengan tiga item
+eng2sp = {'one':'uno', 'two':'dos', 'three':'tres'}
+print(eng2sp)
+
+# Mencari value dengan key
+eng2sp = {'one':'uno', 'two':'dos', 'three':'tres'}
+results = eng2sp['two']
+print(results)
+
+# Jumlah pasangan key-value
+eng2sp = {'one':'uno', 'two':'dos', 'three':'tres'}
+print(len(eng2sp))
+
+# Apa key ada di eng2sp
+eng2sp = {'one':'uno', 'two':'dos', 'three':'tres'}
+if 'two' in eng2sp:
+    print(True)
+else:
+    print(False)
+
+# Apakah sesuatu muncul sebagai value dalam dict, gunakan metode values()
+eng2sp = {'one':'uno', 'two':'dos', 'three':'tres'}
+results = eng2sp.values()
+if 'uno' in results:
+    print(True)
+else:
+    print(False)
+
+# Fungsi histrogram, parameter s(iterbel(dict))
+def histogram(s):
+    # Inisialisasi d dengan dic kosong, untuk menyimpan hasil
+    d = {}
+    # Iterasi item atau key c dalam itrabel s(dict/item/key)
+    for c in s:
+        # kondisi c(key) belum ada di dalam d
+        if c not in d:
+            # Menetampkan c sebagai key dalam d, dengan value 1 (telah ditemukan satu kali)
+            d[c] = 1
+            
+        else:
+            # Value yang terkait dengan c di dalam d, ditingkatkan 1 (utk mencerminkan frkuensi +)
+            d[c] +=1
+    return d
+print(histogram({'one':'uno', 'two':'dos', 'three':'tres'}))
+
+# Fungsi histrogram, parameter s(iterbel(dict))
+def histogram(s):
+    # Inisialisasi d dengan dic kosong, untuk menyimpan hasil
+    d = dict()
+    # Iterasi item atau key c dalam itrabel s(dict/item/key)
+    for c in s:
+        # kondisi c(key) belum ada di dalam d
+        if c not in d:
+            # Menetampkan c sebagai key dalam d, dengan value 1 (telah ditemukan satu kali)
+            d[c] = 1
+            
+        else:
+            # Value yang terkait dengan c di dalam d, ditingkatkan 1 (utk mencerminkan frkuensi +)
+            d[c] +=1
+    return d
+print(histogram('onetwothree'))
+
+
+
+
+"""
+Buatkan dengan fungsi histogram utk menghitung frekuensi..
+berapa kali setiap nilai/value unik dalam dictionary muncul
+
+"""
+
+def histogram(s):
+    results = dict()
+    for n in s.values():
+        if n not in results:
+            results[n] = 1
+        else:
+            results[n] += 1
+    return results
+print(histogram({'satu':'gajah', 'dua':'gajah', 'tiga':'cat'}))
+
+def hitogram(a):
+    hasil = dict()
+    for v in a.values():
+        hasil[v] = hasil.get(v, 0) + 1
+    return hasil
+
+all_hasil = histogram({'satu':'gajah', 'dua':'gajah', 'tiga':'cat'})
+print(all_hasil)
+print(all_hasil.get('a', 0))
+
+""""""
+def histogram(mas):
+    results = {}
+    for zak in mas:
+        results[zak] = results.get(zak, 0) + 1
+    return results
+
+def modifikasi(unyu):
+    for c, hit in unyu.items(): # sorted(unyu.items())
+        print(c, hit)
+unyu = histogram('parrot')
+modifikasi(unyu)
